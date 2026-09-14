@@ -45,27 +45,13 @@ namespace SitiKanisa_Tiket_Kereta
         private void btnsimpan_Click(object sender, EventArgs e)
         {
 
-            string user = txtuser.Text;
-            string pass = txtpass.Text;
-            string status = cbstatus.Text;
-            string role = cbrole.Text;
-
-            db.crud($"SELECT idRole FROM role WHERE nama_role = '{role}'");
-            string idrole = db.ds.Tables[0].Rows[0]["idRole"].ToString();
-            db.crud($"INSERT INTO petugas (`username`, `password`, `idrole`, `status`) VALUES ('{user}', '{pass}', '{idrole}', '{status}');");
-            tampildata();
-            bersih();
+            
 
         }
 
         private void cbrole_DropDown(object sender, EventArgs e)
         {
-            cbrole.Items.Clear();
-            db.crud("SELECT nama_role FROM role");
-            foreach (DataRow row in db.ds.Tables[0].Rows)
-            {
-                cbrole.Items.Add(row["nama_role"].ToString());
-            }
+
         }
 
 
@@ -76,15 +62,26 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void cbstatus_DropDown(object sender, EventArgs e)
         {
-            cbstatus.Items.Clear();
-            cbstatus.Items.Add("Aktif");
-            cbstatus.Items.Add("Tidak Aktif");
+            
         }
 
         private void FPETUGAS_Load(object sender, EventArgs e)
         {
             tampildata();
             tablepetugas.Columns["Column6"].Visible = false;
+
+            cbrole.Items.Clear();
+            db.crud("SELECT nama_role FROM role");
+            foreach (DataRow row in db.ds.Tables[0].Rows)
+            {
+                cbrole.Items.Add(row["nama_role"].ToString());
+            }
+
+            cbstatus.Items.Clear();
+            cbstatus.Items.Add("Aktif");
+            cbstatus.Items.Add("Tidak Aktif");
+
+
         }
 
 
@@ -147,19 +144,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void btnubah_Click(object sender, EventArgs e)
         {
-            string us = txtuser.Text;
-            string pw = txtpass.Text;
-            string st = cbstatus.Text;
-            string role = cbrole.Text;
-
-            db.crud($"SELECT idRole FROM role WHERE nama_role = '{role}'");
-            string idrole = db.ds.Tables[0].Rows[0]["idRole"].ToString();
-
-            db.crud($"UPDATE petugas SET username='{us}', password='{pw}', idrole='{idrole}', status='{st}' WHERE idp='{LBLID.Text}'");
-
-            tampildata();
-            bersih();
-            LBLID.Text = "";
+            
         }
 
         private void btntampil_Click(object sender, EventArgs e)
@@ -235,6 +220,42 @@ namespace SitiKanisa_Tiket_Kereta
                 tablepetugas.Rows.Add(idp, no, user, role, status);
                 no++;
             }
+        }
+
+        private void btnsimpan_Click_1(object sender, EventArgs e)
+        {
+            string user = txtuser.Text;
+            string pass = txtpass.Text;
+            string status = cbstatus.Text;
+            string role = cbrole.Text;
+
+            db.crud($"SELECT idRole FROM role WHERE nama_role = '{role}'");
+            string idrole = db.ds.Tables[0].Rows[0]["idRole"].ToString();
+            db.crud($"INSERT INTO petugas (`username`, `password`, `idrole`, `status`) VALUES ('{user}', '{pass}', '{idrole}', '{status}');");
+            tampildata();
+            bersih();
+        }
+
+        private void btnubah_Click_1(object sender, EventArgs e)
+        {
+            string us = txtuser.Text;
+            string pw = txtpass.Text;
+            string st = cbstatus.Text;
+            string role = cbrole.Text;
+
+            db.crud($"SELECT idRole FROM role WHERE nama_role = '{role}'");
+            string idrole = db.ds.Tables[0].Rows[0]["idRole"].ToString();
+
+            db.crud($"UPDATE petugas SET username='{us}', password='{pw}', idrole='{idrole}', status='{st}' WHERE idp='{LBLID.Text}'");
+
+            tampildata();
+            bersih();
+            LBLID.Text = "";
+        }
+
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

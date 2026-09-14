@@ -29,12 +29,14 @@ namespace SitiKanisa_Tiket_Kereta
             cmbrute.Text = "";
             txtkereta.Text = "";
             txtkelas.Text = "";
+            LBLIDJ.Text = "";
         }
 
         public void tampildata()
         {
 
         }
+
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -42,32 +44,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-         string tujuan = cmbrute.Text;
-
-         if (tujuan == "")
-          {
-           txtkelas.Text = "";
-           txtkelas.Text = "";
-           txtharga.Clear();
-           return;
-          }
-
-            db.crud($@"SELECT kereta.nama_kereta, jenis_kereta.nama_jenis, kereta.harga FROM rute INNER JOIN kereta  ON rute.id_kereta = kereta.idkereta INNER JOIN jenis_kereta  ON kereta.id_jenis_kereta = jenis_kereta.id_jenis_kereta WHERE rute.stasiun_tujuan = '{tujuan}'");
-
-            if (db.ds.Tables[0].Rows.Count > 0)
-                {
-                    DataRow row = db.ds.Tables[0].Rows[0];
-
-                    txtkereta.Text = row["nama_kereta"].ToString();
-                    txtkelas.Text = row["nama_jenis"].ToString();
-                    txtharga.Text = row["harga"].ToString();
-                }
-                else
-                {
-                    txtkereta.Text = "";
-                    txtkelas.Text = "";
-                    txtharga.Clear();
-                }
+            carijadwal();
         }
 
         private void btnpesan_Click(object sender, EventArgs e)
@@ -82,47 +59,28 @@ namespace SitiKanisa_Tiket_Kereta
             string tkt = txttiket.Text;
             string ttl = txttotal.Text;
 
-            if (nm == "" || noid == "" || notelp == "" || tujuan == "" || krt == "" || byr == "" || hrg == "" || tkt == "" || ttl == "")
+            if (nm == "" || noid == "" || notelp == "" || tujuan == "" ||
+                krt == "" || byr == "" || hrg == "" || tkt == "" || ttl == "")
             {
                 MessageBox.Show("Data masih belum lengkap!");
                 return;
             }
 
-            db.crud($"SELECT idkereta FROM kereta WHERE nama_kereta = '{krt}'");
+            string idjadwal = LBLIDJ.Text;
 
-            if (db.ds.Tables[0].Rows.Count == 0)
-            {
-                MessageBox.Show("Kereta tidak ditemukan!");
-                return;
-            }
-
-            string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
-
-            db.crud($"SELECT id_rute FROM rute WHERE id_kereta = '{idkereta}' AND stasiun_tujuan = '{tujuan}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
-            {
-                MessageBox.Show("Rute tidak ditemukan!");
-                return;
-            }
-
-            string idrute = db.ds.Tables[0].Rows[0]["id_rute"].ToString();
-
-            string tanggal = txttgl.Value.ToString("yyyy-MM-dd");
-
-            db.crud($"SELECT idjadwal FROM jadwal WHERE id_kereta = '{idkereta}' AND id_rute = '{idrute}' AND tanggal = '{tanggal}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (idjadwal == "")
             {
                 MessageBox.Show("Jadwal tidak ditemukan!");
                 return;
             }
 
-            string idjadwal = db.ds.Tables[0].Rows[0]["idjadwal"].ToString();
-
-            db.crud($@"INSERT INTO pemesanan (id_pemesanan, id_jadwal, nama_pemesan, no_identitas, no_telp, no_kursi, jumlah_tiket, metode_bayar, tanggal_pemesanan, harga, total_harga) VALUES (NULL, '{idjadwal}', '{nm}', '{noid}', '{notelp}','-', '{tkt}', '{byr}', NOW(), '{hrg}', '{ttl}')");
+            db.crud($@"INSERT INTO pemesanan
+            (id_pemesanan, id_jadwal, nama_pemesan, no_identitas, no_telp, no_kursi, jumlah_tiket, metode_bayar, tanggal_pemesanan, harga, total_harga)
+            VALUES
+            (NULL, '{idjadwal}', '{nm}', '{noid}', '{notelp}', '-', '{tkt}', '{byr}', NOW(), '{hrg}', '{ttl}')");
 
             MessageBox.Show("Pemesanan berhasil disimpan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             bersih();
         }
 
@@ -136,9 +94,11 @@ namespace SitiKanisa_Tiket_Kereta
             }
 
             db.crud($"SELECT * FROM penumpang WHERE nama = '{txtnama.Text}'");
+
             if (db.ds.Tables[0].Rows.Count > 0)
             {
                 DataRow baris = db.ds.Tables[0].Rows[0];
+
                 string idi = baris["idpenumpang"].ToString();
                 string telp = baris["no_hp"].ToString();
 
@@ -155,7 +115,9 @@ namespace SitiKanisa_Tiket_Kereta
         private void FPESANAN_Load(object sender, EventArgs e)
         {
             AutoCompleteStringCollection nama = new AutoCompleteStringCollection();
+
             db.crud("SELECT * FROM penumpang");
+
             foreach (DataRow row in db.ds.Tables[0].Rows)
             {
                 nama.Add(row["nama"].ToString());
@@ -166,11 +128,15 @@ namespace SitiKanisa_Tiket_Kereta
             txtnama.AutoCompleteCustomSource = nama;
 
             cmbrute.Items.Clear();
+
             db.crud("SELECT DISTINCT stasiun_tujuan FROM rute");
+
             foreach (DataRow row in db.ds.Tables[0].Rows)
             {
                 cmbrute.Items.Add(row["stasiun_tujuan"].ToString());
             }
+
+            carijadwal();
         }
 
         private void txttiket_TextChanged(object sender, EventArgs e)
@@ -187,22 +153,88 @@ namespace SitiKanisa_Tiket_Kereta
                 return;
             }
 
-            int harga = int.Parse(txtharga.Text);
-            int tiket = int.Parse(txttiket.Text);
+            int harga;
+            int tiket;
+
+            if (!int.TryParse(txtharga.Text, out harga))
+            {
+                txttotal.Clear();
+                return;
+            }
+
+            if (!int.TryParse(txttiket.Text, out tiket))
+            {
+                txttotal.Clear();
+                return;
+            }
 
             int total = harga * tiket;
 
             txttotal.Text = total.ToString();
-
-            
         }
 
         private void cmbbayar_DropDown(object sender, EventArgs e)
         {
             cmbbayar.Items.Clear();
+
             cmbbayar.Items.Add("Transfer");
             cmbbayar.Items.Add("Gopay");
             cmbbayar.Items.Add("Dana");
+        }
+
+        public void carijadwal()
+        {
+            string tujuan = cmbrute.Text;
+
+            if (tujuan == "")
+            {
+                LBLIDJ.Text = "";
+                txtkereta.Text = "";
+                txtkelas.Text = "";
+                txtharga.Clear();
+                return;
+            }
+
+            db.crud($@"SELECT jadwal.idjadwal,
+           kereta.nama_kereta,
+           jenis_kereta.nama_jenis,
+           jadwal.tanggal,
+           kereta.harga
+           FROM jadwal
+           INNER JOIN kereta ON jadwal.id_kereta = kereta.idkereta
+           INNER JOIN jenis_kereta ON kereta.id_jenis_kereta = jenis_kereta.id_jenis_kereta
+           INNER JOIN rute ON jadwal.id_rute = rute.id_rute
+           WHERE rute.stasiun_tujuan = '{tujuan}';");
+
+            if (db.ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow row = db.ds.Tables[0].Rows[0];
+
+                LBLIDJ.Text = row["idjadwal"].ToString();
+                txtkereta.Text = row["nama_kereta"].ToString();
+                txttgl.Text = row["tanggal"].ToString();
+                txtkelas.Text = row["nama_jenis"].ToString();
+                txtharga.Text = row["harga"].ToString();
+            }
+            else
+            {
+                LBLIDJ.Text = "";
+                txtkereta.Text = "";
+                txtkelas.Text = "";
+                txtharga.Clear();
+
+                MessageBox.Show("Data rute tidak ditemukan!");
+            }
+        }
+
+        private void txttgl_ValueChanged(object sender, EventArgs e)
+        {
+            carijadwal();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

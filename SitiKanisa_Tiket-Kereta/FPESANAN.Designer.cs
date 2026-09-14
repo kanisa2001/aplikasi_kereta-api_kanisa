@@ -30,12 +30,15 @@ namespace SitiKanisa_Tiket_Kereta
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.LBLIDJ = new System.Windows.Forms.Label();
             this.btnpesan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.cmbbayar = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.txtkelas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtkereta = new Guna.UI2.WinForms.Guna2TextBox();
             this.txttotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,8 +59,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtkereta = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtkelas = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -67,6 +68,7 @@ namespace SitiKanisa_Tiket_Kereta
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BorderRadius = 15;
+            this.guna2CustomGradientPanel1.Controls.Add(this.LBLIDJ);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnpesan);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2GradientPanel5);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2GradientPanel2);
@@ -74,9 +76,18 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1308, 516);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1380, 516);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
+            // 
+            // LBLIDJ
+            // 
+            this.LBLIDJ.AutoSize = true;
+            this.LBLIDJ.Location = new System.Drawing.Point(1267, 23);
+            this.LBLIDJ.Name = "LBLIDJ";
+            this.LBLIDJ.Size = new System.Drawing.Size(63, 20);
+            this.LBLIDJ.TabIndex = 17;
+            this.LBLIDJ.Text = "LBLIDJ";
             // 
             // btnpesan
             // 
@@ -160,6 +171,44 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(645, 403);
             this.guna2GradientPanel2.TabIndex = 1;
+            // 
+            // txtkelas
+            // 
+            this.txtkelas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtkelas.DefaultText = "";
+            this.txtkelas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtkelas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtkelas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkelas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkelas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkelas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtkelas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkelas.Location = new System.Drawing.Point(305, 157);
+            this.txtkelas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtkelas.Name = "txtkelas";
+            this.txtkelas.PlaceholderText = "";
+            this.txtkelas.SelectedText = "";
+            this.txtkelas.Size = new System.Drawing.Size(252, 44);
+            this.txtkelas.TabIndex = 16;
+            // 
+            // txtkereta
+            // 
+            this.txtkereta.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtkereta.DefaultText = "";
+            this.txtkereta.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtkereta.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtkereta.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkereta.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkereta.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkereta.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtkereta.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkereta.Location = new System.Drawing.Point(25, 157);
+            this.txtkereta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtkereta.Name = "txtkereta";
+            this.txtkereta.PlaceholderText = "";
+            this.txtkereta.SelectedText = "";
+            this.txtkereta.Size = new System.Drawing.Size(252, 44);
+            this.txtkereta.TabIndex = 15;
             // 
             // txttotal
             // 
@@ -258,6 +307,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txttgl.Size = new System.Drawing.Size(252, 36);
             this.txttgl.TabIndex = 4;
             this.txttgl.Value = new System.DateTime(2026, 9, 4, 14, 57, 56, 551);
+            this.txttgl.ValueChanged += new System.EventHandler(this.txttgl_ValueChanged);
             // 
             // cmbrute
             // 
@@ -314,7 +364,7 @@ namespace SitiKanisa_Tiket_Kereta
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 23);
+            this.label4.Location = new System.Drawing.Point(21, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(188, 20);
             this.label4.TabIndex = 0;
@@ -419,54 +469,17 @@ namespace SitiKanisa_Tiket_Kereta
             this.label1.TabIndex = 0;
             this.label1.Text = "Nama Penumpang";
             // 
-            // txtkereta
-            // 
-            this.txtkereta.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtkereta.DefaultText = "";
-            this.txtkereta.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtkereta.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtkereta.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkereta.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkereta.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkereta.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtkereta.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkereta.Location = new System.Drawing.Point(25, 157);
-            this.txtkereta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtkereta.Name = "txtkereta";
-            this.txtkereta.PlaceholderText = "";
-            this.txtkereta.SelectedText = "";
-            this.txtkereta.Size = new System.Drawing.Size(252, 44);
-            this.txtkereta.TabIndex = 15;
-            // 
-            // txtkelas
-            // 
-            this.txtkelas.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtkelas.DefaultText = "";
-            this.txtkelas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtkelas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtkelas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkelas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkelas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkelas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtkelas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkelas.Location = new System.Drawing.Point(305, 157);
-            this.txtkelas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtkelas.Name = "txtkelas";
-            this.txtkelas.PlaceholderText = "";
-            this.txtkelas.SelectedText = "";
-            this.txtkelas.Size = new System.Drawing.Size(252, 44);
-            this.txtkelas.TabIndex = 16;
-            // 
             // FPESANAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 516);
+            this.ClientSize = new System.Drawing.Size(1380, 516);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "FPESANAN";
             this.Text = "FPESANAN";
             this.Load += new System.EventHandler(this.FPESANAN_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
             this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel5.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
@@ -508,5 +521,6 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2TextBox txttotal;
         private Guna.UI2.WinForms.Guna2TextBox txtkelas;
         private Guna.UI2.WinForms.Guna2TextBox txtkereta;
+        private System.Windows.Forms.Label LBLIDJ;
     }
 }

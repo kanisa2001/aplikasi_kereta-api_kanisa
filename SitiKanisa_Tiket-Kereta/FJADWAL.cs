@@ -291,6 +291,21 @@ namespace SitiKanisa_Tiket_Kereta
             tampildata();
             bersih();
         }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }

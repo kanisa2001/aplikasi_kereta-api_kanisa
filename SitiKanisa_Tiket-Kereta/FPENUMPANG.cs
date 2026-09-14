@@ -38,7 +38,7 @@ namespace SitiKanisa_Tiket_Kereta
                 string identitas = "" + baris["nik"];
                 string telp = "" + baris["no_hp"];
 
-                tablepenumpang.Rows.Add(idp, nama, jnskelamin, identitas, telp);
+                tablepenumpang.Rows.Add(idp, nama, identitas, jnskelamin, telp);
                 no++;
             }
         }

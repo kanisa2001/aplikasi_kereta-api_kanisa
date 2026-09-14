@@ -93,53 +93,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void tablerute_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int baris = e.RowIndex;
-            int kolom = e.ColumnIndex;
-
-            if (baris < 0)
-                return;
-
-            if (kolom == 5)
-            {
-                string idr = tablerute.Rows[baris].Cells[0].Value.ToString();
-
-                if (db.ds != null) db.ds.Clear();
-                {
-                    db.crud($"SELECT rute.*, kereta.nama_kereta " +
-                            $"FROM rute " +
-                            $"INNER JOIN kereta " +
-                            $"ON rute.id_kereta = kereta.idkereta " +
-                            $"WHERE rute.id_rute = '{idr}'");
-
-                    foreach (DataRow brs in db.ds.Tables[0].Rows)
-                    {
-                        string id = "" + brs["id_rute"];
-                        string nmk = "" + brs["nama_kereta"];
-                        string asal = "" + brs["stasiun_asal"];
-                        string tujuan = "" + brs["stasiun_tujuan"];
-
-                        LBLID.Text = id;
-                        cmdkereta.Text = nmk;
-                        txtasal.Text = asal;
-                        txtujuan.Text = tujuan;
-                    }
-                }
-            }
-
-            if (kolom == 6)
-            {
-                string id = tablerute.Rows[baris].Cells[0].Value.ToString();
-
-                DialogResult hasil = MessageBox.Show("Yakin mau hapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (hasil == DialogResult.Yes)
-                {
-                    db.crud($"DELETE FROM rute WHERE id_rute = '{id}'");
-
-                    tampildata();
-                    bersih();
-                }
-            }
+           
         }
 
         private void cmdkereta_DropDown(object sender, EventArgs e)
@@ -213,6 +167,57 @@ namespace SitiKanisa_Tiket_Kereta
                 if (txttujuan.Text !="")
                 {
                     btnsimpan.Focus();
+                }
+            }
+        }
+
+        private void tablerute_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int baris = e.RowIndex;
+            int kolom = e.ColumnIndex;
+
+            if (baris < 0)
+                return;
+
+            if (kolom == 5)
+            {
+                string idr = tablerute.Rows[baris].Cells[0].Value.ToString();
+
+                if (db.ds != null) db.ds.Clear();
+                {
+                    db.crud($"SELECT rute.*, kereta.nama_kereta " +
+                            $"FROM rute " +
+                            $"INNER JOIN kereta " +
+                            $"ON rute.id_kereta = kereta.idkereta " +
+                            $"WHERE rute.id_rute = '{idr}'");
+
+                    foreach (DataRow brs in db.ds.Tables[0].Rows)
+                    {
+                        string id = "" + brs["id_rute"];
+                        string nmk = "" + brs["nama_kereta"];
+                        string asal = "" + brs["stasiun_asal"];
+                        string tujuan = "" + brs["stasiun_tujuan"];
+
+                        LBLID.Text = id;
+                        cmdkereta.Text = nmk;
+                        txtasal.Text = asal;
+                        txtujuan.Text = tujuan;
+                    }
+                }
+            }
+
+            if (kolom == 6)
+            {
+                string id = tablerute.Rows[baris].Cells[0].Value.ToString();
+
+                DialogResult hasil = MessageBox.Show("Yakin mau hapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (hasil == DialogResult.Yes)
+                {
+                    db.crud($"DELETE FROM rute WHERE id_rute = '{id}'");
+
+                    tampildata();
+                    bersih();
                 }
             }
         }

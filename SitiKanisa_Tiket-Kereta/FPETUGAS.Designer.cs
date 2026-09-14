@@ -29,9 +29,9 @@ namespace SitiKanisa_Tiket_Kereta
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPETUGAS));
             this.tablepetugas = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,16 +67,16 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             this.tablepetugas.AllowUserToAddRows = false;
             this.tablepetugas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tablepetugas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablepetugas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.tablepetugas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablepetugas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tablepetugas.ColumnHeadersHeight = 22;
             this.tablepetugas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tablepetugas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -87,14 +87,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablepetugas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablepetugas.DefaultCellStyle = dataGridViewCellStyle9;
             this.tablepetugas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablepetugas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablepetugas.Location = new System.Drawing.Point(0, 0);
@@ -103,7 +103,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablepetugas.RowHeadersVisible = false;
             this.tablepetugas.RowHeadersWidth = 62;
             this.tablepetugas.RowTemplate.Height = 28;
-            this.tablepetugas.Size = new System.Drawing.Size(1253, 405);
+            this.tablepetugas.Size = new System.Drawing.Size(1414, 405);
             this.tablepetugas.TabIndex = 18;
             this.tablepetugas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.tablepetugas.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,6 +184,8 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // guna2GradientPanel2
             // 
+            this.guna2GradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
             this.guna2GradientPanel2.Controls.Add(this.LBLID);
             this.guna2GradientPanel2.Controls.Add(this.btnubah);
@@ -200,6 +202,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(1248, 181);
             this.guna2GradientPanel2.TabIndex = 20;
+            this.guna2GradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel2_Paint);
             // 
             // LBLID
             // 
@@ -224,6 +227,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah.Size = new System.Drawing.Size(128, 33);
             this.btnubah.TabIndex = 31;
             this.btnubah.Text = "Ubah";
+            this.btnubah.Click += new System.EventHandler(this.btnubah_Click_1);
             // 
             // cbrole
             // 
@@ -279,6 +283,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.Size = new System.Drawing.Size(126, 33);
             this.btnsimpan.TabIndex = 24;
             this.btnsimpan.Text = "Simpan";
+            this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click_1);
             // 
             // cbstatus
             // 
@@ -329,7 +334,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btntampil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btntampil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btntampil.ForeColor = System.Drawing.Color.White;
-            this.btntampil.Location = new System.Drawing.Point(45, 275);
+            this.btntampil.Location = new System.Drawing.Point(1358, 291);
             this.btntampil.Name = "btntampil";
             this.btntampil.Size = new System.Drawing.Size(44, 33);
             this.btntampil.TabIndex = 32;
@@ -338,9 +343,10 @@ namespace SitiKanisa_Tiket_Kereta
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.Controls.Add(this.tablepetugas);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(45, 318);
+            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 330);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1253, 405);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1414, 405);
             this.guna2GradientPanel1.TabIndex = 19;
             // 
             // txtsearch
