@@ -29,7 +29,9 @@ namespace SitiKanisa_Tiket_Kereta
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPESANAN));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnprint = new Guna.UI2.WinForms.Guna2Button();
             this.LBLIDJ = new System.Windows.Forms.Label();
             this.btnpesan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -59,6 +61,8 @@ namespace SitiKanisa_Tiket_Kereta
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -68,6 +72,7 @@ namespace SitiKanisa_Tiket_Kereta
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BorderRadius = 15;
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnprint);
             this.guna2CustomGradientPanel1.Controls.Add(this.LBLIDJ);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnpesan);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2GradientPanel5);
@@ -80,14 +85,30 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2CustomGradientPanel1.TabIndex = 0;
             this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             // 
+            // btnprint
+            // 
+            this.btnprint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnprint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnprint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnprint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnprint.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnprint.ForeColor = System.Drawing.Color.White;
+            this.btnprint.Location = new System.Drawing.Point(1001, 446);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(127, 45);
+            this.btnprint.TabIndex = 18;
+            this.btnprint.Text = "Print Ticket";
+            this.btnprint.Click += new System.EventHandler(this.ptnprint_Click);
+            // 
             // LBLIDJ
             // 
             this.LBLIDJ.AutoSize = true;
+            this.LBLIDJ.BackColor = System.Drawing.Color.White;
             this.LBLIDJ.Location = new System.Drawing.Point(1267, 23);
             this.LBLIDJ.Name = "LBLIDJ";
-            this.LBLIDJ.Size = new System.Drawing.Size(63, 20);
+            this.LBLIDJ.Size = new System.Drawing.Size(26, 20);
             this.LBLIDJ.TabIndex = 17;
-            this.LBLIDJ.Text = "LBLIDJ";
+            this.LBLIDJ.Text = "ID";
             // 
             // btnpesan
             // 
@@ -101,7 +122,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnpesan.Name = "btnpesan";
             this.btnpesan.Size = new System.Drawing.Size(127, 45);
             this.btnpesan.TabIndex = 4;
-            this.btnpesan.Text = "PESAN";
+            this.btnpesan.Text = "Pesan";
             this.btnpesan.Click += new System.EventHandler(this.btnpesan_Click);
             // 
             // guna2GradientPanel5
@@ -469,6 +490,20 @@ namespace SitiKanisa_Tiket_Kereta
             this.label1.TabIndex = 0;
             this.label1.Text = "Nama Penumpang";
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // FPESANAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -522,5 +557,8 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2TextBox txtkelas;
         private Guna.UI2.WinForms.Guna2TextBox txtkereta;
         private System.Windows.Forms.Label LBLIDJ;
+        private Guna.UI2.WinForms.Guna2Button btnprint;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

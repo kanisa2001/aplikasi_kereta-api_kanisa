@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace SitiKanisa_Tiket_Kereta
 {
@@ -75,13 +76,12 @@ namespace SitiKanisa_Tiket_Kereta
             }
 
             db.crud($@"INSERT INTO pemesanan
-            (id_pemesanan, id_jadwal, nama_pemesan, no_identitas, no_telp, no_kursi, jumlah_tiket, metode_bayar, tanggal_pemesanan, harga, total_harga)
+            (id_pemesanan, id_jadwal, nama_pemesan, no_identitas, no_telp, jumlah_tiket, metode_bayar, tanggal_pemesanan, harga, total_harga)
             VALUES
-            (NULL, '{idjadwal}', '{nm}', '{noid}', '{notelp}', '-', '{tkt}', '{byr}', NOW(), '{hrg}', '{ttl}')");
+            (NULL, '{idjadwal}', '{nm}', '{noid}', '{notelp}', '{tkt}', '{byr}', NOW(), '{hrg}', '{ttl}')");
 
             MessageBox.Show("Pemesanan berhasil disimpan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            bersih();
         }
 
         private void txtnama_TextChanged(object sender, EventArgs e)
@@ -235,6 +235,82 @@ namespace SitiKanisa_Tiket_Kereta
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ptnprint_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Font judul = new Font("Arial", 18, FontStyle.Bold);
+            Font subjudul = new Font("Arial", 12, FontStyle.Bold);
+            Font isi = new Font("Arial", 10);
+            Font kecil = new Font("Arial", 9);
+
+            int x = 50;
+            int y = 40;
+
+            e.Graphics.DrawString("TIKET KERETA API", judul, Brushes.Black, x, y);
+            y += 35;
+
+            e.Graphics.DrawString("BUKTI PEMESANAN TIKET", subjudul, Brushes.Black, x, y);
+            y += 35;
+
+            e.Graphics.DrawString("==========================================", isi, Brushes.Black, x, y);
+            y += 30;
+
+            e.Graphics.DrawString("ID Jadwal       : " + LBLIDJ.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Nama Penumpang  : " + txtnama.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("No. Identitas   : " + txtidentitas.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("No. Telepon     : " + txttelfon.Text, isi, Brushes.Black, x, y);
+            y += 30;
+
+            e.Graphics.DrawString("DETAIL PERJALANAN", subjudul, Brushes.Black, x, y);
+            y += 30;
+
+            e.Graphics.DrawString("Rute            : " + cmbrute.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Kereta          : " + txtkereta.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Kelas           : " + txtkelas.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Tanggal Berangkat : " + txttgl.Text, isi, Brushes.Black, x, y);
+            y += 30;
+
+            e.Graphics.DrawString("PEMBAYARAN", subjudul, Brushes.Black, x, y);
+            y += 30;
+
+            e.Graphics.DrawString("Harga Tiket     : Rp " + txtharga.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Jumlah Tiket    : " + txttiket.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Total Harga     : Rp " + txttotal.Text, isi, Brushes.Black, x, y);
+            y += 25;
+
+            e.Graphics.DrawString("Metode Bayar    : " + cmbbayar.Text, isi, Brushes.Black, x, y);
+            y += 35;
+
+            e.Graphics.DrawString("==========================================", isi, Brushes.Black, x, y);
+            y += 30;
+
+            e.Graphics.DrawString("Terima kasih telah melakukan pemesanan.", kecil, Brushes.Black, x, y);
+            y += 20;
+
+            e.Graphics.DrawString("Harap datang sesuai tanggal keberangkatan.", kecil, Brushes.Black, x, y);
         }
     }
 }
