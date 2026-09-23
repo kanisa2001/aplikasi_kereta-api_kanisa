@@ -33,10 +33,7 @@ namespace SitiKanisa_Tiket_Kereta
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtasal = new System.Windows.Forms.TextBox();
-            this.txtujuan = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmdkereta = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txttujuan = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LBLID = new System.Windows.Forms.Label();
@@ -44,14 +41,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah = new Guna.UI2.WinForms.Guna2Button();
             this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tablerute = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cbasal = new System.Windows.Forms.ComboBox();
+            this.cbtujuan = new System.Windows.Forms.ComboBox();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
@@ -61,30 +58,11 @@ namespace SitiKanisa_Tiket_Kereta
             ((System.ComponentModel.ISupportInitialize)(this.tablerute)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtasal
-            // 
-            this.txtasal.Location = new System.Drawing.Point(132, 149);
-            this.txtasal.Multiline = true;
-            this.txtasal.Name = "txtasal";
-            this.txtasal.Size = new System.Drawing.Size(193, 36);
-            this.txtasal.TabIndex = 33;
-            this.txtasal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtasal_KeyPress);
-            // 
-            // txtujuan
-            // 
-            this.txtujuan.Location = new System.Drawing.Point(501, 151);
-            this.txtujuan.Multiline = true;
-            this.txtujuan.Name = "txtujuan";
-            this.txtujuan.Size = new System.Drawing.Size(197, 36);
-            this.txtujuan.TabIndex = 31;
-            this.txtujuan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtujuan_KeyPress);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.cmdkereta);
-            this.panel1.Controls.Add(this.txtasal);
-            this.panel1.Controls.Add(this.txtujuan);
+            this.panel1.Controls.Add(this.cbtujuan);
+            this.panel1.Controls.Add(this.cbasal);
             this.panel1.Controls.Add(this.txttujuan);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.LBLID);
@@ -92,29 +70,11 @@ namespace SitiKanisa_Tiket_Kereta
             this.panel1.Controls.Add(this.btnubah);
             this.panel1.Controls.Add(this.txtsearch);
             this.panel1.Controls.Add(this.btnsimpan);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1574, 202);
             this.panel1.TabIndex = 24;
-            // 
-            // cmdkereta
-            // 
-            this.cmdkereta.BackColor = System.Drawing.Color.Transparent;
-            this.cmdkereta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmdkereta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmdkereta.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmdkereta.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmdkereta.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmdkereta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmdkereta.ItemHeight = 30;
-            this.cmdkereta.Location = new System.Drawing.Point(132, 82);
-            this.cmdkereta.Name = "cmdkereta";
-            this.cmdkereta.Size = new System.Drawing.Size(501, 36);
-            this.cmdkereta.TabIndex = 34;
-            this.cmdkereta.DropDown += new System.EventHandler(this.cmdkereta_DropDown);
-            this.cmdkereta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmdkereta_KeyPress);
             // 
             // txttujuan
             // 
@@ -210,15 +170,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.Text = "Simpan";
             this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 87);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Nama Kereta";
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Edit";
@@ -265,7 +216,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablerute.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
             this.Column1,
-            this.Column2,
             this.Role,
             this.Column4,
             this.Edit,
@@ -296,6 +246,22 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablerute.ThemeStyle.RowsStyle.Height = 28;
             this.tablerute.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablerute_CellClick_1);
             // 
+            // cbasal
+            // 
+            this.cbasal.FormattingEnabled = true;
+            this.cbasal.Location = new System.Drawing.Point(132, 157);
+            this.cbasal.Name = "cbasal";
+            this.cbasal.Size = new System.Drawing.Size(213, 28);
+            this.cbasal.TabIndex = 36;
+            // 
+            // cbtujuan
+            // 
+            this.cbtujuan.FormattingEnabled = true;
+            this.cbtujuan.Location = new System.Drawing.Point(490, 157);
+            this.cbtujuan.Name = "cbtujuan";
+            this.cbtujuan.Size = new System.Drawing.Size(213, 28);
+            this.cbtujuan.TabIndex = 37;
+            // 
             // Column3
             // 
             this.Column3.HeaderText = "ID";
@@ -309,13 +275,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nama Kereta";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // Role
             // 
@@ -371,8 +330,6 @@ namespace SitiKanisa_Tiket_Kereta
 
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.TextBox txtasal;
-        private System.Windows.Forms.TextBox txtujuan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label txttujuan;
         private System.Windows.Forms.Label label2;
@@ -381,13 +338,12 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2Button btnubah;
         private Guna.UI2.WinForms.Guna2TextBox txtsearch;
         private Guna.UI2.WinForms.Guna2Button btnsimpan;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2ComboBox cmdkereta;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2DataGridView tablerute;
+        private System.Windows.Forms.ComboBox cbtujuan;
+        private System.Windows.Forms.ComboBox cbasal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Edit;

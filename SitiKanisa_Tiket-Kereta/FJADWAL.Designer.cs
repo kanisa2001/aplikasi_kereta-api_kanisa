@@ -30,31 +30,13 @@ namespace SitiKanisa_Tiket_Kereta
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FJADWAL));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblid = new System.Windows.Forms.Label();
-            this.txtsttuj = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtstaw = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txttiba = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtberangkat = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txttampildata = new Guna.UI2.WinForms.Guna2Button();
-            this.btnubah = new Guna.UI2.WinForms.Guna2Button();
-            this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
-            this.txtkapasitas = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtharga = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cmbkereta = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tablejadwal = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +50,26 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnubah = new Guna.UI2.WinForms.Guna2Button();
+            this.txtsttuj = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cmbkereta = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtstaw = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txttiba = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtharga = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtberangkat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtkapasitas = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbrute = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablejadwal)).BeginInit();
@@ -89,15 +90,16 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2CustomGradientPanel1.TabIndex = 0;
             this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             // 
-            // label9
+            // label10
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 20);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "ID";
-            this.label9.Visible = false;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(434, 38);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Jadwal Keberangkatan";
             // 
             // lblid
             // 
@@ -106,102 +108,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(0, 20);
             this.lblid.TabIndex = 25;
-            // 
-            // txtsttuj
-            // 
-            this.txtsttuj.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsttuj.DefaultText = "";
-            this.txtsttuj.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtsttuj.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtsttuj.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsttuj.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsttuj.Enabled = false;
-            this.txtsttuj.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsttuj.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtsttuj.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsttuj.Location = new System.Drawing.Point(352, 154);
-            this.txtsttuj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtsttuj.Name = "txtsttuj";
-            this.txtsttuj.PlaceholderText = "";
-            this.txtsttuj.SelectedText = "";
-            this.txtsttuj.Size = new System.Drawing.Size(244, 36);
-            this.txtsttuj.TabIndex = 24;
-            // 
-            // txtstaw
-            // 
-            this.txtstaw.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtstaw.DefaultText = "";
-            this.txtstaw.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtstaw.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtstaw.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtstaw.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtstaw.Enabled = false;
-            this.txtstaw.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtstaw.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtstaw.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtstaw.Location = new System.Drawing.Point(352, 79);
-            this.txtstaw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtstaw.Name = "txtstaw";
-            this.txtstaw.PlaceholderText = "";
-            this.txtstaw.SelectedText = "";
-            this.txtstaw.Size = new System.Drawing.Size(244, 36);
-            this.txtstaw.TabIndex = 23;
-            // 
-            // txttiba
-            // 
-            this.txttiba.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txttiba.DefaultText = "";
-            this.txttiba.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txttiba.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txttiba.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttiba.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttiba.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttiba.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttiba.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttiba.Location = new System.Drawing.Point(673, 154);
-            this.txttiba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txttiba.Name = "txttiba";
-            this.txttiba.PlaceholderText = "";
-            this.txttiba.SelectedText = "";
-            this.txttiba.Size = new System.Drawing.Size(244, 36);
-            this.txttiba.TabIndex = 22;
-            // 
-            // txtberangkat
-            // 
-            this.txtberangkat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtberangkat.DefaultText = "";
-            this.txtberangkat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtberangkat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtberangkat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtberangkat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtberangkat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtberangkat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtberangkat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtberangkat.Location = new System.Drawing.Point(673, 79);
-            this.txtberangkat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtberangkat.Name = "txtberangkat";
-            this.txtberangkat.PlaceholderText = "";
-            this.txtberangkat.SelectedText = "";
-            this.txtberangkat.Size = new System.Drawing.Size(244, 36);
-            this.txtberangkat.TabIndex = 21;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(669, 129);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 20);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Jam Tiba";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(669, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 20);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Jam Berangkat";
             // 
             // txttampildata
             // 
@@ -219,155 +125,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.txttampildata.TabIndex = 18;
             this.txttampildata.Click += new System.EventHandler(this.txttampildata_Click);
             // 
-            // btnubah
-            // 
-            this.btnubah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnubah.ForeColor = System.Drawing.Color.White;
-            this.btnubah.Location = new System.Drawing.Point(1006, 239);
-            this.btnubah.Name = "btnubah";
-            this.btnubah.Size = new System.Drawing.Size(212, 45);
-            this.btnubah.TabIndex = 17;
-            this.btnubah.Text = "Ubah";
-            this.btnubah.Click += new System.EventHandler(this.txtubah_Click);
-            // 
-            // btnsimpan
-            // 
-            this.btnsimpan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnsimpan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnsimpan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(768, 239);
-            this.btnsimpan.Name = "btnsimpan";
-            this.btnsimpan.Size = new System.Drawing.Size(212, 45);
-            this.btnsimpan.TabIndex = 16;
-            this.btnsimpan.Text = "Simpan";
-            this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
-            // 
-            // txtkapasitas
-            // 
-            this.txtkapasitas.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtkapasitas.DefaultText = "";
-            this.txtkapasitas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtkapasitas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtkapasitas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkapasitas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtkapasitas.Enabled = false;
-            this.txtkapasitas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkapasitas.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtkapasitas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtkapasitas.Location = new System.Drawing.Point(974, 158);
-            this.txtkapasitas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtkapasitas.Name = "txtkapasitas";
-            this.txtkapasitas.PlaceholderText = "";
-            this.txtkapasitas.SelectedText = "";
-            this.txtkapasitas.Size = new System.Drawing.Size(244, 36);
-            this.txtkapasitas.TabIndex = 15;
-            // 
-            // txtharga
-            // 
-            this.txtharga.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtharga.DefaultText = "";
-            this.txtharga.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtharga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtharga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtharga.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtharga.Enabled = false;
-            this.txtharga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtharga.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtharga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtharga.Location = new System.Drawing.Point(974, 79);
-            this.txtharga.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtharga.Name = "txtharga";
-            this.txtharga.PlaceholderText = "";
-            this.txtharga.SelectedText = "";
-            this.txtharga.Size = new System.Drawing.Size(244, 36);
-            this.txtharga.TabIndex = 14;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(31, 158);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(244, 26);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
-            // cmbkereta
-            // 
-            this.cmbkereta.BackColor = System.Drawing.Color.Transparent;
-            this.cmbkereta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbkereta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbkereta.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbkereta.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbkereta.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbkereta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbkereta.ItemHeight = 30;
-            this.cmbkereta.Location = new System.Drawing.Point(31, 79);
-            this.cmbkereta.Name = "cmbkereta";
-            this.cmbkereta.Size = new System.Drawing.Size(244, 36);
-            this.cmbkereta.TabIndex = 9;
-            this.cmbkereta.DropDown += new System.EventHandler(this.cmbkereta_DropDown);
-            this.cmbkereta.SelectedIndexChanged += new System.EventHandler(this.cmbkereta_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(970, 135);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Kapasitas";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(970, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Harga";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Tanggal Berangkat";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(348, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Statiun Tujuan";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(348, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Statiun Awal";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Kereta";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // guna2CustomGradientPanel2
             // 
             this.guna2CustomGradientPanel2.Controls.Add(this.tablejadwal);
@@ -381,17 +138,17 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             this.tablejadwal.AllowUserToAddRows = false;
             this.tablejadwal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tablejadwal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.tablejadwal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablejadwal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablejadwal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablejadwal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablejadwal.ColumnHeadersHeight = 42;
             this.tablejadwal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tablejadwal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -406,14 +163,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column9,
             this.Column10});
             this.tablejadwal.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablejadwal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablejadwal.DefaultCellStyle = dataGridViewCellStyle6;
             this.tablejadwal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablejadwal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablejadwal.Location = new System.Drawing.Point(0, 0);
@@ -516,6 +273,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
             this.guna2GradientPanel1.BorderRadius = 15;
             this.guna2GradientPanel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2GradientPanel1.Controls.Add(this.cmbrute);
             this.guna2GradientPanel1.Controls.Add(this.label9);
             this.guna2GradientPanel1.Controls.Add(this.btnsimpan);
             this.guna2GradientPanel1.Controls.Add(this.btnubah);
@@ -541,16 +299,277 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.TabIndex = 27;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
-            // label10
+            // label9
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(434, 38);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Jadwal Keberangkatan";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 20);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "ID";
+            this.label9.Visible = false;
+            // 
+            // btnsimpan
+            // 
+            this.btnsimpan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnsimpan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnsimpan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnsimpan.ForeColor = System.Drawing.Color.White;
+            this.btnsimpan.Location = new System.Drawing.Point(768, 239);
+            this.btnsimpan.Name = "btnsimpan";
+            this.btnsimpan.Size = new System.Drawing.Size(212, 45);
+            this.btnsimpan.TabIndex = 16;
+            this.btnsimpan.Text = "Simpan";
+            this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
+            // 
+            // btnubah
+            // 
+            this.btnubah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnubah.ForeColor = System.Drawing.Color.White;
+            this.btnubah.Location = new System.Drawing.Point(1006, 239);
+            this.btnubah.Name = "btnubah";
+            this.btnubah.Size = new System.Drawing.Size(212, 45);
+            this.btnubah.TabIndex = 17;
+            this.btnubah.Text = "Ubah";
+            this.btnubah.Click += new System.EventHandler(this.txtubah_Click);
+            // 
+            // txtsttuj
+            // 
+            this.txtsttuj.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsttuj.DefaultText = "";
+            this.txtsttuj.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsttuj.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsttuj.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsttuj.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsttuj.Enabled = false;
+            this.txtsttuj.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsttuj.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsttuj.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsttuj.Location = new System.Drawing.Point(352, 154);
+            this.txtsttuj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtsttuj.Name = "txtsttuj";
+            this.txtsttuj.PlaceholderText = "";
+            this.txtsttuj.SelectedText = "";
+            this.txtsttuj.Size = new System.Drawing.Size(244, 36);
+            this.txtsttuj.TabIndex = 24;
+            // 
+            // cmbkereta
+            // 
+            this.cmbkereta.BackColor = System.Drawing.Color.Transparent;
+            this.cmbkereta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbkereta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbkereta.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbkereta.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbkereta.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbkereta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbkereta.ItemHeight = 30;
+            this.cmbkereta.Location = new System.Drawing.Point(31, 79);
+            this.cmbkereta.Name = "cmbkereta";
+            this.cmbkereta.Size = new System.Drawing.Size(244, 36);
+            this.cmbkereta.TabIndex = 9;
+            this.cmbkereta.DropDown += new System.EventHandler(this.cmbkereta_DropDown);
+            this.cmbkereta.SelectedIndexChanged += new System.EventHandler(this.cmbkereta_SelectedIndexChanged);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(31, 158);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(244, 26);
+            this.dateTimePicker1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Kereta";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(970, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Harga";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Tanggal Berangkat";
+            // 
+            // txtstaw
+            // 
+            this.txtstaw.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtstaw.DefaultText = "";
+            this.txtstaw.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtstaw.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtstaw.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtstaw.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtstaw.Enabled = false;
+            this.txtstaw.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtstaw.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtstaw.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtstaw.Location = new System.Drawing.Point(352, 79);
+            this.txtstaw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtstaw.Name = "txtstaw";
+            this.txtstaw.PlaceholderText = "";
+            this.txtstaw.SelectedText = "";
+            this.txtstaw.Size = new System.Drawing.Size(244, 36);
+            this.txtstaw.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(970, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Kapasitas";
+            // 
+            // txttiba
+            // 
+            this.txttiba.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txttiba.DefaultText = "";
+            this.txttiba.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txttiba.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txttiba.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttiba.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttiba.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttiba.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txttiba.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttiba.Location = new System.Drawing.Point(673, 154);
+            this.txttiba.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txttiba.Name = "txttiba";
+            this.txttiba.PlaceholderText = "";
+            this.txttiba.SelectedText = "";
+            this.txttiba.Size = new System.Drawing.Size(244, 36);
+            this.txttiba.TabIndex = 22;
+            // 
+            // txtharga
+            // 
+            this.txtharga.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtharga.DefaultText = "";
+            this.txtharga.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtharga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtharga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtharga.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtharga.Enabled = false;
+            this.txtharga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtharga.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtharga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtharga.Location = new System.Drawing.Point(974, 79);
+            this.txtharga.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtharga.Name = "txtharga";
+            this.txtharga.PlaceholderText = "";
+            this.txtharga.SelectedText = "";
+            this.txtharga.Size = new System.Drawing.Size(244, 36);
+            this.txtharga.TabIndex = 14;
+            // 
+            // txtberangkat
+            // 
+            this.txtberangkat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtberangkat.DefaultText = "";
+            this.txtberangkat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtberangkat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtberangkat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtberangkat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtberangkat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtberangkat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtberangkat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtberangkat.Location = new System.Drawing.Point(673, 79);
+            this.txtberangkat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtberangkat.Name = "txtberangkat";
+            this.txtberangkat.PlaceholderText = "";
+            this.txtberangkat.SelectedText = "";
+            this.txtberangkat.Size = new System.Drawing.Size(244, 36);
+            this.txtberangkat.TabIndex = 21;
+            // 
+            // txtkapasitas
+            // 
+            this.txtkapasitas.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtkapasitas.DefaultText = "";
+            this.txtkapasitas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtkapasitas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtkapasitas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkapasitas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtkapasitas.Enabled = false;
+            this.txtkapasitas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkapasitas.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtkapasitas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtkapasitas.Location = new System.Drawing.Point(974, 158);
+            this.txtkapasitas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtkapasitas.Name = "txtkapasitas";
+            this.txtkapasitas.PlaceholderText = "";
+            this.txtkapasitas.SelectedText = "";
+            this.txtkapasitas.Size = new System.Drawing.Size(244, 36);
+            this.txtkapasitas.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(348, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Statiun Tujuan";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(669, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Jam Tiba";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(348, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Statiun Awal";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(669, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Jam Berangkat";
+            // 
+            // cmbrute
+            // 
+            this.cmbrute.BackColor = System.Drawing.Color.Transparent;
+            this.cmbrute.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbrute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbrute.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbrute.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbrute.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbrute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbrute.ItemHeight = 30;
+            this.cmbrute.Location = new System.Drawing.Point(31, 217);
+            this.cmbrute.Name = "cmbrute";
+            this.cmbrute.Size = new System.Drawing.Size(244, 36);
+            this.cmbrute.TabIndex = 27;
+            this.cmbrute.DropDown += new System.EventHandler(this.cmbrute_DropDown);
+            this.cmbrute.SelectedIndexChanged += new System.EventHandler(this.cmbrute_SelectedIndexChanged);
             // 
             // FJADWAL
             // 
@@ -609,5 +628,6 @@ namespace SitiKanisa_Tiket_Kereta
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbrute;
     }
 }

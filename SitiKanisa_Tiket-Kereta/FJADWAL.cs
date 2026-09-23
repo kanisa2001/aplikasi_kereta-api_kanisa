@@ -20,13 +20,17 @@ namespace SitiKanisa_Tiket_Kereta
         public void tampildata()
         {
             tablejadwal.Rows.Clear();
-            db.crud(@"SELECT jadwal.idjadwal, jadwal.id_kereta, kereta.nama_kereta,
-                     rute.stasiun_asal, rute.stasiun_tujuan,
-                     jadwal.tanggal, jadwal.jam_berangkat,
-                     jadwal.jam_tiba, jadwal.Harga
-              FROM jadwal
-              INNER JOIN kereta ON kereta.idkereta = jadwal.id_kereta
-              INNER JOIN rute ON rute.id_rute = jadwal.id_rute");
+
+            db.crud($@"SELECT jadwal.idjadwal, kereta.nama_kereta,
+               asal.nama_stasiun AS stasiun_asal,
+               tujuan.nama_stasiun AS stasiun_tujuan,
+               jadwal.tanggal, jadwal.jam_berangkat,
+               jadwal.jam_tiba, jadwal.Harga
+               FROM jadwal
+               INNER JOIN kereta ON jadwal.id_kereta = kereta.idkereta
+               INNER JOIN rute ON jadwal.id_rute = rute.id_rute
+               INNER JOIN stasiun AS asal ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan ON rute.id_stasiun_tujuan = tujuan.id_stasiun");
 
             foreach (DataRow item in db.ds.Tables[0].Rows)
             {
@@ -38,7 +42,8 @@ namespace SitiKanisa_Tiket_Kereta
                 string jb = item["jam_berangkat"].ToString();
                 string jt = item["jam_tiba"].ToString();
                 string h = item["Harga"].ToString();
-                tablejadwal.Rows.Add(idj, nm, sa, st, tggl, jb, jt, h); ;
+
+                tablejadwal.Rows.Add(idj, nm, sa, st, tggl, jb, jt, h);
             }
         }
 
@@ -66,60 +71,47 @@ namespace SitiKanisa_Tiket_Kereta
         private void btnsimpan_Click(object sender, EventArgs e)
         {
             string krt = cmbkereta.Text;
-            string staw = txtstaw.Text;
-            string sttuj = txtsttuj.Text;
+            string rute = cmbrute.Text;
 
             string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string brngkt = txtberangkat.Text + ":00";
             string jamtb = txttiba.Text + ":00";
-
             string hrg = txtharga.Text;
 
-            db.crud($"SELECT idkereta FROM kereta WHERE nama_kereta = '{krt}'");
+            db.crud($@"SELECT idkereta FROM kereta
+               WHERE nama_kereta = '{krt}'");
 
-            if (db.ds.Tables[0].Rows.Count > 0)
+            if (db.ds.Tables[0].Rows.Count == 0)
             {
-                string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
-
-                // Mengambil id rute berdasarkan stasiun asal dan tujuan
-                db.crud($@"SELECT id_rute 
-                   FROM rute 
-                   WHERE stasiun_asal = '{staw}' 
-                   AND stasiun_tujuan = '{sttuj}'");
-                if (db.ds.Tables[0].Rows.Count > 0)
-                {
-                    string idrute = db.ds.Tables[0].Rows[0]["id_rute"].ToString();
-
-                    // Simpan jadwal
-                    db.crud($@"INSERT INTO jadwal
-                       (idjadwal, id_kereta, id_rute, tanggal, jam_berangkat, jam_tiba, Harga)
-                       VALUES
-                       (null, '{idkereta}', '{idrute}', '{tgglbrngkt}', '{brngkt}', '{jamtb}','{hrg}')");
-
-                    MessageBox.Show("Data jadwal berhasil disimpan!",
-                                    "Informasi",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
-                    bersih();
-                    tampildata();
-
-                }
-                else
-                {
-                    MessageBox.Show("Rute tidak ditemukan!",
-                                    "Peringatan",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning);
-                }
+                MessageBox.Show("Kereta tidak ditemukan!");
+                return;
             }
-            else
+
+            string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
+
+            string idrute = rute.Split('-')[0].Trim();
+
+            db.crud($@"SELECT id_rute FROM rute
+               WHERE id_rute = '{idrute}'");
+
+            if (db.ds.Tables[0].Rows.Count == 0)
             {
-                MessageBox.Show("Kereta tidak ditemukan!",
-                                "Peringatan",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                MessageBox.Show("Rute tidak ditemukan!");
+                return;
             }
+
+            db.crud($@"INSERT INTO jadwal
+               (idjadwal, id_kereta, id_rute, tanggal, jam_berangkat, jam_tiba, Harga)
+               VALUES
+               (null, '{idkereta}', '{idrute}', '{tgglbrngkt}', '{brngkt}', '{jamtb}', '{hrg}')");
+
+            MessageBox.Show("Data jadwal berhasil disimpan!",
+                            "Informasi",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+            bersih();
+            tampildata();
         }
 
         private void cmbkereta_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,28 +120,24 @@ namespace SitiKanisa_Tiket_Kereta
 
             if (krt == "")
             {
-                txtstaw.Clear();
-                txtsttuj.Clear();
                 txtharga.Clear();
                 txtkapasitas.Clear();
                 return;
             }
 
-            db.crud($@"SELECT rute.stasiun_asal, rute.stasiun_tujuan, kereta.harga, kereta.kapasitas FROM rute INNER JOIN kereta ON rute.id_kereta = kereta.idkereta WHERE kereta.nama_kereta = '{krt}'");
+            db.crud($@"SELECT harga, kapasitas
+               FROM kereta
+               WHERE nama_kereta = '{krt}'");
 
             if (db.ds.Tables[0].Rows.Count > 0)
             {
                 DataRow row = db.ds.Tables[0].Rows[0];
 
-                txtstaw.Text = row["stasiun_asal"].ToString();
-                txtsttuj.Text = row["stasiun_tujuan"].ToString();
                 txtharga.Text = row["harga"].ToString();
                 txtkapasitas.Text = row["kapasitas"].ToString();
             }
             else
             {
-                txtstaw.Clear();
-                txtsttuj.Clear();
                 txtharga.Clear();
                 txtkapasitas.Clear();
             }
@@ -182,26 +170,77 @@ namespace SitiKanisa_Tiket_Kereta
             {
                 string idjadwal = tablejadwal.Rows[baris].Cells[0].Value.ToString();
 
-                db.crud($@"SELECT jadwal.idjadwal, kereta.nama_kereta,
-                      rute.stasiun_asal, rute.stasiun_tujuan,
-                      jadwal.tanggal, jadwal.jam_berangkat,
-                      jadwal.jam_tiba, jadwal.Harga
+                db.crud($@"SELECT jadwal.idjadwal,
+               kereta.nama_kereta,
+               rute.id_rute,
+               asal.nama_stasiun AS stasiun_asal,
+               tujuan.nama_stasiun AS stasiun_tujuan,
+               jadwal.tanggal,
+               jadwal.jam_berangkat,
+               jadwal.jam_tiba,
+               jadwal.Harga
                FROM jadwal
-               INNER JOIN kereta ON kereta.idkereta = jadwal.id_kereta
-               INNER JOIN rute ON rute.id_rute = jadwal.id_rute
+               INNER JOIN kereta
+               ON jadwal.id_kereta = kereta.idkereta
+               INNER JOIN rute
+               ON jadwal.id_rute = rute.id_rute
+               INNER JOIN stasiun AS asal
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
                WHERE jadwal.idjadwal = '{idjadwal}'");
 
-                foreach (DataRow brs in db.ds.Tables[0].Rows)
+                if (db.ds.Tables[0].Rows.Count > 0)
                 {
-                    label9.Text = idjadwal;
+                    DataRow brs = db.ds.Tables[0].Rows[0];
 
-                    cmbkereta.Text = "" + brs["nama_kereta"];
-                    txtstaw.Text = "" + brs["stasiun_asal"];
-                    txtsttuj.Text = "" + brs["stasiun_tujuan"];
-                    dateTimePicker1.Text = "" + brs["tanggal"];
-                    txtberangkat.Text = "" + brs["jam_berangkat"];
-                    txttiba.Text = "" + brs["jam_tiba"];
-                    txtharga.Text = "" + brs["Harga"];
+                    label9.Text = brs["idjadwal"].ToString();
+
+                    cmbkereta.Items.Clear();
+
+                    db.crud($@"SELECT nama_kereta FROM kereta");
+
+                    foreach (DataRow row in db.ds.Tables[0].Rows)
+                    {
+                        cmbkereta.Items.Add(row["nama_kereta"].ToString());
+                    }
+
+                    cmbkereta.Text = brs["nama_kereta"].ToString();
+
+                    cmbrute.Items.Clear();
+
+                    db.crud($@"SELECT rute.id_rute,
+                   asal.nama_stasiun AS stasiun_asal,
+                   tujuan.nama_stasiun AS stasiun_tujuan
+                   FROM rute
+                   INNER JOIN stasiun AS asal
+                   ON rute.id_stasiun_asal = asal.id_stasiun
+                   INNER JOIN stasiun AS tujuan
+                   ON rute.id_stasiun_tujuan = tujuan.id_stasiun");
+
+                    foreach (DataRow row in db.ds.Tables[0].Rows)
+                    {
+                        cmbrute.Items.Add(
+                            row["id_rute"].ToString() + " - " +
+                            row["stasiun_asal"].ToString() + " - " +
+                            row["stasiun_tujuan"].ToString()
+                        );
+                    }
+
+                    string idrute = brs["id_rute"].ToString();
+                    string asal = brs["stasiun_asal"].ToString();
+                    string tujuan = brs["stasiun_tujuan"].ToString();
+
+                    cmbrute.Text = idrute + " - " + asal + " - " + tujuan;
+
+                    txtstaw.Text = asal;
+                    txtsttuj.Text = tujuan;
+
+                    dateTimePicker1.Value = Convert.ToDateTime(brs["tanggal"]);
+
+                    txtberangkat.Text = brs["jam_berangkat"].ToString();
+                    txttiba.Text = brs["jam_tiba"].ToString();
+                    txtharga.Text = brs["Harga"].ToString();
                 }
             }
 
@@ -228,15 +267,15 @@ namespace SitiKanisa_Tiket_Kereta
         private void txtubah_Click(object sender, EventArgs e)
         {
             string krt = cmbkereta.Text;
-            string staw = txtstaw.Text;
-            string sttuj = txtsttuj.Text;
+            string rute = cmbrute.Text;
+
             string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
             string brngkt = txtberangkat.Text + ":00";
             string jamtb = txttiba.Text + ":00";
             string hrg = txtharga.Text;
 
-            // Cari ID kereta
-            db.crud($"SELECT idkereta FROM kereta WHERE nama_kereta = '{krt}'");
+            db.crud($@"SELECT idkereta FROM kereta
+               WHERE nama_kereta = '{krt}'");
 
             if (db.ds.Tables[0].Rows.Count == 0)
             {
@@ -246,8 +285,67 @@ namespace SitiKanisa_Tiket_Kereta
 
             string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
 
-            // Cari ID rute
-            db.crud($"SELECT id_rute FROM rute WHERE stasiun_asal = '{staw}' AND stasiun_tujuan = '{sttuj}'");
+            string idrute = rute.Split('-')[0].Trim();
+
+            db.crud($@"SELECT id_rute FROM rute
+               WHERE id_rute = '{idrute}'");
+
+            if (db.ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Rute tidak ditemukan!");
+                return;
+            }
+
+            db.crud($@"UPDATE jadwal SET
+               id_kereta = '{idkereta}',
+               id_rute = '{idrute}',
+               tanggal = '{tgglbrngkt}',
+               jam_berangkat = '{brngkt}',
+               jam_tiba = '{jamtb}',
+               Harga = '{hrg}'
+               WHERE idjadwal = '{label9.Text}'");
+
+            MessageBox.Show("Data jadwal berhasil diubah!",
+                            "Informasi",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+            tampildata();
+            bersih();
+            label9.Text = "";
+        }
+
+        private void txttampildata_Click(object sender, EventArgs e)
+        {
+            string krt = cmbkereta.Text;
+            string staw = txtstaw.Text;
+            string sttuj = txtsttuj.Text;
+
+            string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string brngkt = txtberangkat.Text + ":00";
+            string jamtb = txttiba.Text + ":00";
+            string hrg = txtharga.Text;
+
+            db.crud($@"SELECT idkereta FROM kereta 
+               WHERE nama_kereta = '{krt}'");
+
+            if (db.ds.Tables[0].Rows.Count == 0)
+            {
+                MessageBox.Show("Kereta tidak ditemukan!");
+                return;
+            }
+
+            string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
+
+            db.crud($@"SELECT rute.id_rute
+               FROM rute
+               INNER JOIN stasiun AS asal
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
+               WHERE rute.id_kereta = '{idkereta}'
+               AND asal.nama_stasiun = '{staw}'
+               AND tujuan.nama_stasiun = '{sttuj}'");
 
             if (db.ds.Tables[0].Rows.Count == 0)
             {
@@ -257,36 +355,14 @@ namespace SitiKanisa_Tiket_Kereta
 
             string idrute = db.ds.Tables[0].Rows[0]["id_rute"].ToString();
 
-            // Update data jadwal
-            db.crud($@"UPDATE jadwal SET 
-                id_kereta = '{idkereta}',
-                id_rute = '{idrute}',
-                tanggal = '{tgglbrngkt}',
-                jam_berangkat = '{brngkt}',
-                jam_tiba = '{jamtb}',
-                Harga = '{hrg}'
-                WHERE idjadwal = '{label9.Text}'");
-
-            MessageBox.Show("Data jadwal berhasil diubah!",
-                            "Informasi",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
-            tampildata();
-            bersih();
-        }
-
-        private void txttampildata_Click(object sender, EventArgs e)
-        {
-            string krt = cmbkereta.Text;
-            string staw = txtstaw.Text;
-            string sttuj = txtsttuj.Text;
-            string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string brngkt = txtberangkat.Text + ":00";
-            string jamtb = txttiba.Text + ":00";
-            string hrg = txtharga.Text;
-
-            db.crud($"UPDATE jadwal SET id_kereta = (SELECT idkereta FROM kereta WHERE nama_kereta = '{krt}'), id_rute = (SELECT id_rute FROM rute WHERE stasiun_asal = '{staw}' AND stasiun_tujuan = '{sttuj}'), tanggal = '{tgglbrngkt}', jam_berangkat = '{brngkt}', jam_tiba = '{jamtb}', Harga = '{hrg}' WHERE idjadwal = {label9.Text}");
+            db.crud($@"UPDATE jadwal SET
+               id_kereta = '{idkereta}',
+               id_rute = '{idrute}',
+               tanggal = '{tgglbrngkt}',
+               jam_berangkat = '{brngkt}',
+               jam_tiba = '{jamtb}',
+               Harga = '{hrg}'
+               WHERE idjadwal = '{label9.Text}'");
 
             tampildata();
             bersih();
@@ -305,6 +381,60 @@ namespace SitiKanisa_Tiket_Kereta
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cmbrute_DropDown(object sender, EventArgs e)
+        {
+            cmbrute.Items.Clear();
+
+            db.crud($@"SELECT rute.id_rute,
+               asal.nama_stasiun AS stasiun_asal,
+               tujuan.nama_stasiun AS stasiun_tujuan
+               FROM rute
+               INNER JOIN stasiun AS asal
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun");
+
+            foreach (DataRow row in db.ds.Tables[0].Rows)
+            {
+                cmbrute.Items.Add(
+                    row["id_rute"].ToString() + " - " +
+                    row["stasiun_asal"].ToString() + " - " +
+                    row["stasiun_tujuan"].ToString()
+                );
+            }
+        }
+
+        private void cmbrute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string rute = cmbrute.Text;
+
+            if (rute == "")
+            {
+                txtstaw.Clear();
+                txtsttuj.Clear();
+                return;
+            }
+
+            string idrute = rute.Split('-')[0].Trim();
+
+            db.crud($@"SELECT asal.nama_stasiun AS stasiun_asal,
+               tujuan.nama_stasiun AS stasiun_tujuan
+               FROM rute
+               INNER JOIN stasiun AS asal
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
+               WHERE rute.id_rute = '{idrute}'");
+
+            if (db.ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow row = db.ds.Tables[0].Rows[0];
+
+                txtstaw.Text = row["stasiun_asal"].ToString();
+                txtsttuj.Text = row["stasiun_tujuan"].ToString();
+            }
         }
     }
     
