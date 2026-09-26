@@ -31,6 +31,7 @@ namespace SitiKanisa_Tiket_Kereta
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MENU));
             this.pnlside = new System.Windows.Forms.Panel();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -41,13 +42,16 @@ namespace SitiKanisa_Tiket_Kereta
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlnav = new System.Windows.Forms.Panel();
             this.pnlkonten = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblrole = new System.Windows.Forms.Label();
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlnav.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlside
             // 
             this.pnlside.BackColor = System.Drawing.Color.White;
+            this.pnlside.Controls.Add(this.guna2Button6);
             this.pnlside.Controls.Add(this.guna2Button7);
             this.pnlside.Controls.Add(this.guna2Button8);
             this.pnlside.Controls.Add(this.guna2Button3);
@@ -61,6 +65,25 @@ namespace SitiKanisa_Tiket_Kereta
             this.pnlside.Name = "pnlside";
             this.pnlside.Size = new System.Drawing.Size(200, 673);
             this.pnlside.TabIndex = 0;
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.White;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
+            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Location = new System.Drawing.Point(6, 322);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Size = new System.Drawing.Size(191, 40);
+            this.guna2Button6.TabIndex = 12;
+            this.guna2Button6.Text = "RIWAYAT";
+            this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click_1);
             // 
             // guna2Button7
             // 
@@ -208,6 +231,7 @@ namespace SitiKanisa_Tiket_Kereta
             // pnlnav
             // 
             this.pnlnav.BackColor = System.Drawing.Color.White;
+            this.pnlnav.Controls.Add(this.lblrole);
             this.pnlnav.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlnav.Location = new System.Drawing.Point(200, 0);
             this.pnlnav.Name = "pnlnav";
@@ -221,6 +245,16 @@ namespace SitiKanisa_Tiket_Kereta
             this.pnlkonten.Name = "pnlkonten";
             this.pnlkonten.Size = new System.Drawing.Size(959, 609);
             this.pnlkonten.TabIndex = 1;
+            // 
+            // lblrole
+            // 
+            this.lblrole.AutoSize = true;
+            this.lblrole.Location = new System.Drawing.Point(896, 25);
+            this.lblrole.Name = "lblrole";
+            this.lblrole.Size = new System.Drawing.Size(42, 20);
+            this.lblrole.TabIndex = 0;
+            this.lblrole.Text = "Role";
+            this.lblrole.Click += new System.EventHandler(this.label1_Click);
             // 
             // MENU
             // 
@@ -238,6 +272,8 @@ namespace SitiKanisa_Tiket_Kereta
             this.Load += new System.EventHandler(this.MENU_Load);
             this.pnlside.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlnav.ResumeLayout(false);
+            this.pnlnav.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,5 +291,7 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private System.Windows.Forms.Label lblrole;
     }
 }

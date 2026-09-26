@@ -47,3 +47,4 @@ C:\Users\Panji Hasbi Muhamad\source\repos\SitiKanisa_Tiket-Kereta\SitiKanisa_Tik
 C:\Users\Panji Hasbi Muhamad\source\repos\SitiKanisa_Tiket-Kereta\SitiKanisa_Tiket-Kereta\obj\Debug\SitiKanisa_Tiket-Kereta.exe
 C:\Users\Panji Hasbi Muhamad\source\repos\SitiKanisa_Tiket-Kereta\SitiKanisa_Tiket-Kereta\obj\Debug\SitiKanisa_Tiket-Kereta.pdb
 C:\Users\Panji Hasbi Muhamad\source\repos\SitiKanisa_Tiket-Kereta\SitiKanisa_Tiket-Kereta\obj\Debug\SitiKanisa_Tiket-Kereta.csprojAssemblyReference.cache
+C:\Users\Panji Hasbi Muhamad\source\repos\SitiKanisa_Tiket-Kereta\SitiKanisa_Tiket-Kereta\obj\Debug\SitiKanisa_Tiket_Kereta.RIWAYAT.resources

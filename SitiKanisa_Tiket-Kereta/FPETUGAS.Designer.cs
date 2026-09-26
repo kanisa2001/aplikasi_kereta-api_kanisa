@@ -56,8 +56,8 @@ namespace SitiKanisa_Tiket_Kereta
             this.label1 = new System.Windows.Forms.Label();
             this.btntampil = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablepetugas)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -173,10 +173,9 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.guna2GradientPanel2);
             this.guna2Panel1.Controls.Add(this.btntampil);
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel1);
-            this.guna2Panel1.Controls.Add(this.txtsearch);
+            this.guna2Panel1.Controls.Add(this.guna2GradientPanel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -185,11 +184,10 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // guna2GradientPanel2
             // 
-            this.guna2GradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
             this.guna2GradientPanel2.Controls.Add(this.LBLID);
             this.guna2GradientPanel2.Controls.Add(this.btnubah);
+            this.guna2GradientPanel2.Controls.Add(this.txtsearch);
             this.guna2GradientPanel2.Controls.Add(this.cbrole);
             this.guna2GradientPanel2.Controls.Add(this.txtpass);
             this.guna2GradientPanel2.Controls.Add(this.label4);
@@ -199,16 +197,17 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel2.Controls.Add(this.label3);
             this.guna2GradientPanel2.Controls.Add(this.txtuser);
             this.guna2GradientPanel2.Controls.Add(this.label1);
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(45, 83);
+            this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(1248, 181);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(1414, 735);
             this.guna2GradientPanel2.TabIndex = 20;
             this.guna2GradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel2_Paint);
             // 
             // LBLID
             // 
             this.LBLID.AutoSize = true;
-            this.LBLID.Location = new System.Drawing.Point(19, 35);
+            this.LBLID.Location = new System.Drawing.Point(12, 145);
             this.LBLID.Name = "LBLID";
             this.LBLID.Size = new System.Drawing.Size(26, 20);
             this.LBLID.TabIndex = 33;
@@ -223,7 +222,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnubah.ForeColor = System.Drawing.Color.White;
-            this.btnubah.Location = new System.Drawing.Point(1024, 134);
+            this.btnubah.Location = new System.Drawing.Point(1021, 241);
             this.btnubah.Name = "btnubah";
             this.btnubah.Size = new System.Drawing.Size(128, 33);
             this.btnubah.TabIndex = 31;
@@ -240,14 +239,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.cbrole.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbrole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbrole.ItemHeight = 30;
-            this.cbrole.Location = new System.Drawing.Point(744, 78);
+            this.cbrole.Location = new System.Drawing.Point(741, 185);
             this.cbrole.Name = "cbrole";
             this.cbrole.Size = new System.Drawing.Size(408, 36);
             this.cbrole.TabIndex = 29;
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(165, 78);
+            this.txtpass.Location = new System.Drawing.Point(162, 185);
             this.txtpass.Multiline = true;
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(408, 36);
@@ -256,7 +255,7 @@ namespace SitiKanisa_Tiket_Kereta
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(682, 84);
+            this.label4.Location = new System.Drawing.Point(679, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 20);
             this.label4.TabIndex = 26;
@@ -265,7 +264,7 @@ namespace SitiKanisa_Tiket_Kereta
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 94);
+            this.label2.Location = new System.Drawing.Point(78, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 23;
@@ -279,7 +278,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(876, 134);
+            this.btnsimpan.Location = new System.Drawing.Point(873, 241);
             this.btnsimpan.Name = "btnsimpan";
             this.btnsimpan.Size = new System.Drawing.Size(126, 33);
             this.btnsimpan.TabIndex = 24;
@@ -296,7 +295,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.cbstatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbstatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbstatus.ItemHeight = 30;
-            this.cbstatus.Location = new System.Drawing.Point(744, 19);
+            this.cbstatus.Location = new System.Drawing.Point(741, 126);
             this.cbstatus.Name = "cbstatus";
             this.cbstatus.Size = new System.Drawing.Size(408, 36);
             this.cbstatus.TabIndex = 27;
@@ -304,7 +303,7 @@ namespace SitiKanisa_Tiket_Kereta
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(668, 35);
+            this.label3.Location = new System.Drawing.Point(665, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 25;
@@ -312,7 +311,7 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(165, 22);
+            this.txtuser.Location = new System.Drawing.Point(162, 129);
             this.txtuser.Multiline = true;
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(408, 36);
@@ -321,7 +320,7 @@ namespace SitiKanisa_Tiket_Kereta
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 35);
+            this.label1.Location = new System.Drawing.Point(73, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 22;
@@ -350,6 +349,10 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1414, 405);
             this.guna2GradientPanel1.TabIndex = 19;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // txtsearch
             // 
             this.txtsearch.BorderRadius = 15;
@@ -363,7 +366,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconLeft")));
-            this.txtsearch.Location = new System.Drawing.Point(45, 26);
+            this.txtsearch.Location = new System.Drawing.Point(49, 35);
             this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.PlaceholderText = "Search";
@@ -371,10 +374,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtsearch.Size = new System.Drawing.Size(1248, 31);
             this.txtsearch.TabIndex = 30;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // FPETUGAS
             // 
@@ -418,7 +417,7 @@ namespace SitiKanisa_Tiket_Kereta
         private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btntampil;
-        private Guna.UI2.WinForms.Guna2TextBox txtsearch;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private Guna.UI2.WinForms.Guna2TextBox txtsearch;
     }
 }

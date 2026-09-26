@@ -161,6 +161,12 @@
     <Compile Include="FROLE.Designer.cs">
       <DependentUpon>FROLE.cs</DependentUpon>
     </Compile>
+    <Compile Include="RIWAYAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RIWAYAT.Designer.cs">
+      <DependentUpon>RIWAYAT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FGERBONG.resx">
       <DependentUpon>FGERBONG.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +206,9 @@
     </Compile>
     <EmbeddedResource Include="FROLE.resx">
       <DependentUpon>FROLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RIWAYAT.resx">
+      <DependentUpon>RIWAYAT.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

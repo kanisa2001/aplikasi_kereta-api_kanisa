@@ -75,5 +75,16 @@ namespace SitiKanisa_Tiket_Kereta
             FJADWAL Fp = new FJADWAL() { TopMost = true, TopLevel = false };
             KF.UntukForm(Fp, pnlkonten);
         }
+
+        private void guna2Button6_Click_1(object sender, EventArgs e)
+        {
+            RIWAYAT Fp = new RIWAYAT() { TopMost = true, TopLevel = false };
+            KF.UntukForm(Fp, pnlkonten);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

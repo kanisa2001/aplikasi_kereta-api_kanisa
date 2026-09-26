@@ -16,5 +16,10 @@ namespace SitiKanisa_Tiket_Kereta
         {
             InitializeComponent();
         }
+
+        private void FGERBONG_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

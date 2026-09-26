@@ -63,6 +63,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.label1 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.txttersedia = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -173,6 +174,7 @@ namespace SitiKanisa_Tiket_Kereta
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BorderRadius = 15;
+            this.guna2GradientPanel2.Controls.Add(this.txttersedia);
             this.guna2GradientPanel2.Controls.Add(this.txtkelas);
             this.guna2GradientPanel2.Controls.Add(this.txtkereta);
             this.guna2GradientPanel2.Controls.Add(this.txttotal);
@@ -328,7 +330,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.txttgl.Size = new System.Drawing.Size(252, 36);
             this.txttgl.TabIndex = 4;
             this.txttgl.Value = new System.DateTime(2026, 9, 4, 14, 57, 56, 551);
-            this.txttgl.ValueChanged += new System.EventHandler(this.txttgl_ValueChanged);
             // 
             // cmbrute
             // 
@@ -344,7 +345,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.cmbrute.Name = "cmbrute";
             this.cmbrute.Size = new System.Drawing.Size(252, 36);
             this.cmbrute.TabIndex = 5;
-            this.cmbrute.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -504,6 +504,25 @@ namespace SitiKanisa_Tiket_Kereta
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // txttersedia
+            // 
+            this.txttersedia.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txttersedia.DefaultText = "";
+            this.txttersedia.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txttersedia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txttersedia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttersedia.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txttersedia.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttersedia.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txttersedia.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txttersedia.Location = new System.Drawing.Point(305, 23);
+            this.txttersedia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txttersedia.Name = "txttersedia";
+            this.txttersedia.PlaceholderText = "";
+            this.txttersedia.SelectedText = "";
+            this.txttersedia.Size = new System.Drawing.Size(286, 60);
+            this.txttersedia.TabIndex = 17;
+            // 
             // FPESANAN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -560,5 +579,6 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2Button btnprint;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private Guna.UI2.WinForms.Guna2TextBox txttersedia;
     }
 }

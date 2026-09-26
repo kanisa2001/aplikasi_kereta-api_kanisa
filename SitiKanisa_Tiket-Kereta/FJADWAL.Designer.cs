@@ -30,9 +30,9 @@ namespace SitiKanisa_Tiket_Kereta
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FJADWAL));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.lblid = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.cmbrute = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
             this.btnubah = new Guna.UI2.WinForms.Guna2Button();
@@ -69,7 +70,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbrute = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablejadwal)).BeginInit();
@@ -138,17 +139,17 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             this.tablejadwal.AllowUserToAddRows = false;
             this.tablejadwal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.tablejadwal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tablejadwal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tablejadwal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablejadwal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablejadwal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tablejadwal.ColumnHeadersHeight = 42;
             this.tablejadwal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tablejadwal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -163,14 +164,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column9,
             this.Column10});
             this.tablejadwal.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablejadwal.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablejadwal.DefaultCellStyle = dataGridViewCellStyle3;
             this.tablejadwal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablejadwal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablejadwal.Location = new System.Drawing.Point(0, 0);
@@ -273,6 +274,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
             this.guna2GradientPanel1.BorderRadius = 15;
             this.guna2GradientPanel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2GradientPanel1.Controls.Add(this.label11);
             this.guna2GradientPanel1.Controls.Add(this.cmbrute);
             this.guna2GradientPanel1.Controls.Add(this.label9);
             this.guna2GradientPanel1.Controls.Add(this.btnsimpan);
@@ -298,6 +300,23 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1292, 337);
             this.guna2GradientPanel1.TabIndex = 27;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // cmbrute
+            // 
+            this.cmbrute.BackColor = System.Drawing.Color.Transparent;
+            this.cmbrute.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbrute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbrute.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbrute.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbrute.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbrute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbrute.ItemHeight = 30;
+            this.cmbrute.Location = new System.Drawing.Point(31, 230);
+            this.cmbrute.Name = "cmbrute";
+            this.cmbrute.Size = new System.Drawing.Size(244, 36);
+            this.cmbrute.TabIndex = 27;
+            this.cmbrute.DropDown += new System.EventHandler(this.cmbrute_DropDown);
+            this.cmbrute.SelectedIndexChanged += new System.EventHandler(this.cmbrute_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -554,22 +573,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.label5.TabIndex = 19;
             this.label5.Text = "Jam Berangkat";
             // 
-            // cmbrute
+            // label11
             // 
-            this.cmbrute.BackColor = System.Drawing.Color.Transparent;
-            this.cmbrute.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbrute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbrute.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbrute.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbrute.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbrute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbrute.ItemHeight = 30;
-            this.cmbrute.Location = new System.Drawing.Point(31, 217);
-            this.cmbrute.Name = "cmbrute";
-            this.cmbrute.Size = new System.Drawing.Size(244, 36);
-            this.cmbrute.TabIndex = 27;
-            this.cmbrute.DropDown += new System.EventHandler(this.cmbrute_DropDown);
-            this.cmbrute.SelectedIndexChanged += new System.EventHandler(this.cmbrute_SelectedIndexChanged);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(35, 207);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 20);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Cari Rute";
             // 
             // FJADWAL
             // 
@@ -629,5 +640,6 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2ComboBox cmbrute;
+        private System.Windows.Forms.Label label11;
     }
 }

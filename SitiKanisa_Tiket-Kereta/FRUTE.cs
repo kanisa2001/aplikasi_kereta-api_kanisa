@@ -87,8 +87,10 @@ namespace SitiKanisa_Tiket_Kereta
             string idtujuan = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
 
             db.crud($@"INSERT INTO rute
-               (id_rute, id_kereta, id_stasiun_asal, id_stasiun_tujuan)
-               VALUES (null,'{idasal}', '{idtujuan}')");
+               (id_rute, id_stasiun_asal, id_stasiun_tujuan)
+               VALUES (null, '{idasal}', '{idtujuan}')");
+
+            MessageBox.Show("Data rute berhasil disimpan!");
 
             tampildata();
             bersih();
@@ -152,7 +154,7 @@ namespace SitiKanisa_Tiket_Kereta
             if (baris < 0)
                 return;
 
-            if (kolom == 5)
+            if (kolom == 4)
             {
                 string idr = tablerute.Rows[baris].Cells[0].Value.ToString();
 
@@ -178,7 +180,7 @@ namespace SitiKanisa_Tiket_Kereta
                 }
             }
 
-            if (kolom == 6)
+            if (kolom == 5)
             {
                 string id = tablerute.Rows[baris].Cells[0].Value.ToString();
 
