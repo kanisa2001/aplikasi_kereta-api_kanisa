@@ -60,5 +60,53 @@ namespace SitiKanisa_Tiket_Kereta
                 dgvriwayat.Rows.Add(idp, nm, noid, notlp, sawal, stujuan, tgl, hrg, tkt, "Print");
             }
         }
+
+        private void txtcari_TextChanged(object sender, EventArgs e)
+        {
+            dgvriwayat.Rows.Clear();
+
+            string cari = txtcari.Text;
+
+            db.crud($@"SELECT pemesanan.id_pemesanan, 
+               pemesanan.nama_pemesan, 
+               pemesanan.no_identitas, 
+               pemesanan.no_telp, 
+               asal.nama_stasiun AS stasiun_asal, 
+               tujuan.nama_stasiun AS stasiun_tujuan, 
+               jadwal.tanggal, 
+               pemesanan.harga, 
+               pemesanan.jumlah_tiket
+               FROM pemesanan
+               INNER JOIN jadwal
+               ON pemesanan.id_jadwal = jadwal.idjadwal
+               INNER JOIN rute
+               ON jadwal.id_rute = rute.id_rute
+               INNER JOIN stasiun AS asal
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
+               WHERE pemesanan.nama_pemesan LIKE '%{cari}%'
+               OR pemesanan.no_identitas LIKE '%{cari}%'
+               OR pemesanan.no_telp LIKE '%{cari}%'
+               OR asal.nama_stasiun LIKE '%{cari}%'
+               OR tujuan.nama_stasiun LIKE '%{cari}%'");
+
+            foreach (DataRow baris in db.ds.Tables[0].Rows)
+            {
+                string idp = "" + baris["id_pemesanan"];
+                string nm = "" + baris["nama_pemesan"];
+                string noid = "" + baris["no_identitas"];
+                string notlp = "" + baris["no_telp"];
+                string sawal = "" + baris["stasiun_asal"];
+                string stujuan = "" + baris["stasiun_tujuan"];
+                string tgl = "" + baris["tanggal"];
+                string hrg = "" + baris["harga"];
+                string tkt = "" + baris["jumlah_tiket"];
+
+                dgvriwayat.Rows.Add(
+                    idp, nm, noid, notlp, sawal, stujuan, tgl, hrg, tkt, "Print"
+                );
+            }
+        }
     }
 }

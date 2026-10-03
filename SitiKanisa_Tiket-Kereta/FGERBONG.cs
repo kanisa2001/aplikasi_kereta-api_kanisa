@@ -21,5 +21,10 @@ namespace SitiKanisa_Tiket_Kereta
         {
 
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

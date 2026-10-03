@@ -149,6 +149,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtsearch.SelectedText = "";
             this.txtsearch.Size = new System.Drawing.Size(279, 31);
             this.txtsearch.TabIndex = 22;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // txtket
             // 

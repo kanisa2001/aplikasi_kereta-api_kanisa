@@ -251,5 +251,43 @@ namespace SitiKanisa_Tiket_Kereta
                 }
             }
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            tablekereta.Rows.Clear();
+
+            string cari = txtsearch.Text;
+
+            db.crud($@"SELECT kereta.idkereta, 
+               kereta.nama_kereta, 
+               jenis_kereta.nama_jenis, 
+               kereta.kapasitas, 
+               kereta.status, 
+               kereta.harga
+               FROM kereta
+               INNER JOIN jenis_kereta 
+               ON kereta.id_jenis_kereta = jenis_kereta.id_jenis_kereta
+               WHERE kereta.nama_kereta LIKE '%{cari}%'
+               OR jenis_kereta.nama_jenis LIKE '%{cari}%'
+               OR kereta.kapasitas LIKE '%{cari}%'
+               OR kereta.status LIKE '%{cari}%'
+               OR kereta.harga LIKE '%{cari}%'");
+
+            int no = 1;
+
+            foreach (DataRow baris in db.ds.Tables[0].Rows)
+            {
+                string id = baris["idkereta"].ToString();
+                string nmk = baris["nama_kereta"].ToString();
+                string jns = baris["nama_jenis"].ToString();
+                string krs = baris["kapasitas"].ToString();
+                string stts = baris["status"].ToString();
+                string hrg = baris["harga"].ToString();
+
+                tablekereta.Rows.Add(id, no, nmk, jns, krs, stts, hrg);
+
+                no++;
+            }
+        }
     }
 }

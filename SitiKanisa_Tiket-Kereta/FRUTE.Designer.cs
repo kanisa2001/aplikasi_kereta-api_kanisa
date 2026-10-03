@@ -34,6 +34,8 @@ namespace SitiKanisa_Tiket_Kereta
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbtujuan = new System.Windows.Forms.ComboBox();
+            this.cbasal = new System.Windows.Forms.ComboBox();
             this.txttujuan = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LBLID = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tablerute = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cbasal = new System.Windows.Forms.ComboBox();
-            this.cbtujuan = new System.Windows.Forms.ComboBox();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +75,22 @@ namespace SitiKanisa_Tiket_Kereta
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1574, 202);
             this.panel1.TabIndex = 24;
+            // 
+            // cbtujuan
+            // 
+            this.cbtujuan.FormattingEnabled = true;
+            this.cbtujuan.Location = new System.Drawing.Point(490, 157);
+            this.cbtujuan.Name = "cbtujuan";
+            this.cbtujuan.Size = new System.Drawing.Size(213, 28);
+            this.cbtujuan.TabIndex = 37;
+            // 
+            // cbasal
+            // 
+            this.cbasal.FormattingEnabled = true;
+            this.cbasal.Location = new System.Drawing.Point(132, 157);
+            this.cbasal.Name = "cbasal";
+            this.cbasal.Size = new System.Drawing.Size(213, 28);
+            this.cbasal.TabIndex = 36;
             // 
             // txttujuan
             // 
@@ -154,6 +170,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtsearch.SelectedText = "";
             this.txtsearch.Size = new System.Drawing.Size(677, 31);
             this.txtsearch.TabIndex = 22;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // btnsimpan
             // 
@@ -245,22 +262,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablerute.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablerute.ThemeStyle.RowsStyle.Height = 28;
             this.tablerute.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablerute_CellClick_1);
-            // 
-            // cbasal
-            // 
-            this.cbasal.FormattingEnabled = true;
-            this.cbasal.Location = new System.Drawing.Point(132, 157);
-            this.cbasal.Name = "cbasal";
-            this.cbasal.Size = new System.Drawing.Size(213, 28);
-            this.cbasal.TabIndex = 36;
-            // 
-            // cbtujuan
-            // 
-            this.cbtujuan.FormattingEnabled = true;
-            this.cbtujuan.Location = new System.Drawing.Point(490, 157);
-            this.cbtujuan.Name = "cbtujuan";
-            this.cbtujuan.Size = new System.Drawing.Size(213, 28);
-            this.cbtujuan.TabIndex = 37;
             // 
             // Column3
             // 

@@ -195,5 +195,36 @@ namespace SitiKanisa_Tiket_Kereta
                 }
             }
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            tablerute.Rows.Clear();
+
+            string cari = txtsearch.Text;
+
+            db.crud($@"SELECT rute.id_rute, 
+               asal.nama_stasiun AS stasiun_asal, 
+               tujuan.nama_stasiun AS stasiun_tujuan
+               FROM rute
+               INNER JOIN stasiun AS asal 
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan 
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
+               WHERE asal.nama_stasiun LIKE '%{cari}%'
+               OR tujuan.nama_stasiun LIKE '%{cari}%'");
+
+            int no = 1;
+
+            foreach (DataRow baris in db.ds.Tables[0].Rows)
+            {
+                string idr = baris["id_rute"].ToString();
+                string asal = baris["stasiun_asal"].ToString();
+                string tujuan = baris["stasiun_tujuan"].ToString();
+
+                tablerute.Rows.Add(idr, no, asal, tujuan);
+
+                no++;
+            }
+        }
     }
 }

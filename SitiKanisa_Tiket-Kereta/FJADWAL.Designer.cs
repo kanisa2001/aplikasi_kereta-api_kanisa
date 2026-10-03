@@ -29,10 +29,10 @@ namespace SitiKanisa_Tiket_Kereta
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FJADWAL));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FJADWAL));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.lblid = new System.Windows.Forms.Label();
@@ -50,6 +50,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label11 = new System.Windows.Forms.Label();
             this.cmbrute = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnsimpan = new Guna.UI2.WinForms.Guna2Button();
@@ -70,7 +71,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablejadwal)).BeginInit();
@@ -79,6 +80,7 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Controls.Add(this.txtsearch);
             this.guna2CustomGradientPanel1.Controls.Add(this.label10);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblid);
             this.guna2CustomGradientPanel1.Controls.Add(this.txttampildata);
@@ -297,9 +299,18 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.Controls.Add(this.label5);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(17, 98);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1292, 337);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1292, 301);
             this.guna2GradientPanel1.TabIndex = 27;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(35, 207);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 20);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Cari Rute";
             // 
             // cmbrute
             // 
@@ -573,14 +584,28 @@ namespace SitiKanisa_Tiket_Kereta
             this.label5.TabIndex = 19;
             this.label5.Text = "Jam Berangkat";
             // 
-            // label11
+            // txtsearch
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(35, 207);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 20);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Cari Rute";
+            this.txtsearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtsearch.BorderRadius = 15;
+            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsearch.DefaultText = "";
+            this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconLeft")));
+            this.txtsearch.Location = new System.Drawing.Point(665, 57);
+            this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.PlaceholderText = "Search";
+            this.txtsearch.SelectedText = "";
+            this.txtsearch.Size = new System.Drawing.Size(279, 31);
+            this.txtsearch.TabIndex = 28;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // FJADWAL
             // 
@@ -641,5 +666,6 @@ namespace SitiKanisa_Tiket_Kereta
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2ComboBox cmbrute;
         private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2TextBox txtsearch;
     }
 }

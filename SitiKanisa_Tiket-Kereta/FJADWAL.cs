@@ -436,6 +436,52 @@ namespace SitiKanisa_Tiket_Kereta
                 txtsttuj.Text = row["stasiun_tujuan"].ToString();
             }
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            tablejadwal.Rows.Clear();
+
+            string cari = txtsearch.Text;
+
+            db.crud($@"SELECT jadwal.idjadwal, 
+               kereta.nama_kereta,
+               asal.nama_stasiun AS stasiun_asal,
+               tujuan.nama_stasiun AS stasiun_tujuan,
+               jadwal.tanggal,
+               jadwal.jam_berangkat,
+               jadwal.jam_tiba,
+               jadwal.Harga
+               FROM jadwal
+               INNER JOIN kereta 
+               ON jadwal.id_kereta = kereta.idkereta
+               INNER JOIN rute 
+               ON jadwal.id_rute = rute.id_rute
+               INNER JOIN stasiun AS asal 
+               ON rute.id_stasiun_asal = asal.id_stasiun
+               INNER JOIN stasiun AS tujuan 
+               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
+               WHERE kereta.nama_kereta LIKE '%{cari}%'
+               OR asal.nama_stasiun LIKE '%{cari}%'
+               OR tujuan.nama_stasiun LIKE '%{cari}%'
+               OR jadwal.tanggal LIKE '%{cari}%'
+               OR jadwal.jam_berangkat LIKE '%{cari}%'
+               OR jadwal.jam_tiba LIKE '%{cari}%'
+               OR jadwal.Harga LIKE '%{cari}%'");
+
+            foreach (DataRow item in db.ds.Tables[0].Rows)
+            {
+                string idj = item["idjadwal"].ToString();
+                string nm = item["nama_kereta"].ToString();
+                string sa = item["stasiun_asal"].ToString();
+                string st = item["stasiun_tujuan"].ToString();
+                string tggl = item["tanggal"].ToString();
+                string jb = item["jam_berangkat"].ToString();
+                string jt = item["jam_tiba"].ToString();
+                string h = item["Harga"].ToString();
+
+                tablejadwal.Rows.Add(idj, nm, sa, st, tggl, jb, jt, h);
+            }
+        }
     }
-    
 }
+    

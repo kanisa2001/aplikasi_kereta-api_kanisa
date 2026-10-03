@@ -173,5 +173,29 @@ namespace SitiKanisa_Tiket_Kereta
                 }
             }
         }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            tablepenumpang.Rows.Clear();
+
+            string cari = txtsearch.Text;
+
+            db.crud($"SELECT * FROM penumpang " +
+                    $"WHERE nama LIKE '%{cari}%' " +
+                    $"OR nik LIKE '%{cari}%' " +
+                    $"OR jenis_kelamin LIKE '%{cari}%' " +
+                    $"OR no_hp LIKE '%{cari}%'");
+
+            foreach (DataRow baris in db.ds.Tables[0].Rows)
+            {
+                string idp = "" + baris["idpenumpang"];
+                string nama = "" + baris["nama"];
+                string jnskelamin = "" + baris["jenis_kelamin"];
+                string identitas = "" + baris["nik"];
+                string telp = "" + baris["no_hp"];
+
+                tablepenumpang.Rows.Add(idp, nama, identitas, jnskelamin, telp);
+            }
+        }
     }
 }
