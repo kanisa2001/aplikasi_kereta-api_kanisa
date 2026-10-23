@@ -19,6 +19,10 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FGERBONG_Load(object sender, EventArgs e)
         {
+            dgvrole.DataError       += (s, ex) => { ex.Cancel = true; };
+            guna2DataGridView1.DataError += (s, ex) => { ex.Cancel = true; };
+            guna2DataGridView2.DataError += (s, ex) => { ex.Cancel = true; };
+            guna2DataGridView3.DataError += (s, ex) => { ex.Cancel = true; };
 
         }
 

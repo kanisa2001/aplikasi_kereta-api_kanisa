@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace SitiKanisa_Tiket_Kereta
 {
@@ -19,6 +22,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void RIWAYAT_Load(object sender, EventArgs e)
         {
+            dgvriwayat.DataError += (s, ex) => { ex.Cancel = true; };
             tampildata();
         }
 
@@ -107,6 +111,17 @@ namespace SitiKanisa_Tiket_Kereta
                     idp, nm, noid, notlp, sawal, stujuan, tgl, hrg, tkt, "Print"
                 );
             }
+        }
+
+        private void dgvriwayat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
         }
     }
 }

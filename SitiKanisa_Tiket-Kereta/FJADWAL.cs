@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace SitiKanisa_Tiket_Kereta
 {
@@ -145,6 +148,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FJADWAL_Load(object sender, EventArgs e)
         {
+            tablejadwal.DataError += (s, ex) => { ex.Cancel = true; };
             tampildata();
         }
 
@@ -481,6 +485,18 @@ namespace SitiKanisa_Tiket_Kereta
 
                 tablejadwal.Rows.Add(idj, nm, sa, st, tggl, jb, jt, h);
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ReportDocument rpt = new ReportDocument();
+            rpt.Load("Report_Jadwal.rpt");
+
+            string pdfPath = Path.Combine(Path.GetTempPath(), "Laporan_Jadwal-Kereta.pdf");
+            rpt.ExportToDisk(ExportFormatType.PortableDocFormat, pdfPath);
+
+            //membuka pdf otomatis di browser/pdf viewer
+            System.Diagnostics.Process.Start(pdfPath);
         }
     }
 }

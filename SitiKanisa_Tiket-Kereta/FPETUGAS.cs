@@ -67,6 +67,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FPETUGAS_Load(object sender, EventArgs e)
         {
+            tablepetugas.DataError += (s, ex) => { ex.Cancel = true; };
             tampildata();
             tablepetugas.Columns["Column6"].Visible = false;
 

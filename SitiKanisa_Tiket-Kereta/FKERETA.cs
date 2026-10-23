@@ -144,6 +144,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FKERETA_Load(object sender, EventArgs e)
         {
+            tablekereta.DataError += (s, ex) => { ex.Cancel = true; };
             isiJenis();
             cmbstatus.Items.Clear();
 

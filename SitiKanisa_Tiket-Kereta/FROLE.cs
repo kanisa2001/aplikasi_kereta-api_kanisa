@@ -20,6 +20,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FROLE_Load(object sender, EventArgs e)
         {
+            dgvrole.DataError += (s, ex) => { ex.Cancel = true; };
             tampildata();
             dgvrole.Columns["Column3"].Visible = false;
         }

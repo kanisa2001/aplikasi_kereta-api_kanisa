@@ -99,6 +99,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FRUTE_Load(object sender, EventArgs e)
         {
+            tablerute.DataError += (s, ex) => { ex.Cancel = true; };
             tampildata();
 
             cbasal.Items.Clear();

@@ -473,5 +473,10 @@ namespace SitiKanisa_Tiket_Kereta
                 txttersedia.Clear();
             }
         }
+
+        private void txttersedia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

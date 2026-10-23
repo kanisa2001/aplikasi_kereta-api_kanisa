@@ -19,20 +19,35 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            db.crud($"SELECT * FROM petugas WHERE username = '{txtuser.Text}' AND Password = '{txtpass.Text}'");
+            db.crud($"SELECT petugas.idp, petugas.username, petugas.status, role.nama_role " +
+                    $"FROM petugas INNER JOIN role ON petugas.idrole = role.idRole " +
+                    $"WHERE petugas.username = '{txtuser.Text}' AND petugas.Password = '{txtpass.Text}'");
             int cekbaris = db.ds.Tables[0].Rows.Count;
             if (cekbaris == 1)
             {
                 DataRow baris = db.ds.Tables[0].Rows[0];
+                string status = "" + baris["status"];
+
+                if (status == "Tidak Aktif")
+                {
+                    MessageBox.Show("Akun Anda tidak aktif. Hubungi Super Admin.", "Akses Ditolak", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string datamasuk = "" + baris["idp"];
+                string namaRole  = "" + baris["nama_role"];
+                string namaUser  = "" + baris["username"];
+
                 MENU FMENU = new MENU();
-                FMENU.login = datamasuk;
+                FMENU.login    = datamasuk;
+                FMENU.namaRole = namaRole;
+                FMENU.namaUser = namaUser;
                 FMENU.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Username atau Pass salah!!!");
+                MessageBox.Show("Username atau Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

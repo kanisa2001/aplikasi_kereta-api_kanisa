@@ -116,6 +116,7 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void FPENUMPANG_Load(object sender, EventArgs e)
         {
+            tablepenumpang.DataError += (s, ex) => { ex.Cancel = true; };
             cmdkelamin.Items.Clear();
             cmdkelamin.Items.Add("Perempuan");
             cmdkelamin.Items.Add("Laki-Laki");
@@ -196,6 +197,61 @@ namespace SitiKanisa_Tiket_Kereta
 
                 tablepenumpang.Rows.Add(idp, nama, identitas, jnskelamin, telp);
             }
+        }
+
+        private void pnlbase_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtindetitas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttujuan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttelp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdkelamin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LBLID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btntampil_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

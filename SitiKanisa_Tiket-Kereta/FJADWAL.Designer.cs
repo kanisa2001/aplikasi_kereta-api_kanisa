@@ -29,12 +29,13 @@ namespace SitiKanisa_Tiket_Kereta
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FJADWAL));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FJADWAL));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.txttampildata = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -50,6 +51,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column9 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btncetak = new Guna.UI2.WinForms.Guna2Button();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbrute = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,7 +73,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablejadwal)).BeginInit();
@@ -80,8 +81,8 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Controls.Add(this.label12);
             this.guna2CustomGradientPanel1.Controls.Add(this.txtsearch);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label10);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblid);
             this.guna2CustomGradientPanel1.Controls.Add(this.txttampildata);
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
@@ -93,16 +94,41 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2CustomGradientPanel1.TabIndex = 0;
             this.guna2CustomGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel1_Paint);
             // 
-            // label10
+            // label12
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Stencil", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(434, 38);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Jadwal Keberangkatan";
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 54);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(468, 34);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "JADWAL KEBERANGKATAN";
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsearch.BackColor = System.Drawing.Color.Transparent;
+            this.txtsearch.BorderRadius = 10;
+            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsearch.DefaultText = "";
+            this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconRight")));
+            this.txtsearch.Location = new System.Drawing.Point(1023, 14);
+            this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.PlaceholderText = "Search";
+            this.txtsearch.SelectedText = "";
+            this.txtsearch.Size = new System.Drawing.Size(279, 31);
+            this.txtsearch.TabIndex = 28;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // lblid
             // 
@@ -143,6 +169,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablejadwal.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.tablejadwal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablejadwal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tablejadwal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -174,7 +201,6 @@ namespace SitiKanisa_Tiket_Kereta
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablejadwal.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tablejadwal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablejadwal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablejadwal.Location = new System.Drawing.Point(0, 0);
             this.tablejadwal.Name = "tablejadwal";
@@ -269,13 +295,12 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.White;
             this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
             this.guna2GradientPanel1.BorderRadius = 15;
             this.guna2GradientPanel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.guna2GradientPanel1.Controls.Add(this.btncetak);
             this.guna2GradientPanel1.Controls.Add(this.label11);
             this.guna2GradientPanel1.Controls.Add(this.cmbrute);
             this.guna2GradientPanel1.Controls.Add(this.label9);
@@ -302,6 +327,21 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1292, 301);
             this.guna2GradientPanel1.TabIndex = 27;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // btncetak
+            // 
+            this.btncetak.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btncetak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btncetak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btncetak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btncetak.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btncetak.ForeColor = System.Drawing.Color.White;
+            this.btncetak.Location = new System.Drawing.Point(562, 239);
+            this.btncetak.Name = "btncetak";
+            this.btncetak.Size = new System.Drawing.Size(180, 45);
+            this.btncetak.TabIndex = 29;
+            this.btncetak.Text = "guna2Button1";
+            this.btncetak.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label11
             // 
@@ -584,29 +624,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.label5.TabIndex = 19;
             this.label5.Text = "Jam Berangkat";
             // 
-            // txtsearch
-            // 
-            this.txtsearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtsearch.BorderRadius = 15;
-            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsearch.DefaultText = "";
-            this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsearch.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconLeft")));
-            this.txtsearch.Location = new System.Drawing.Point(665, 57);
-            this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtsearch.Name = "txtsearch";
-            this.txtsearch.PlaceholderText = "Search";
-            this.txtsearch.SelectedText = "";
-            this.txtsearch.Size = new System.Drawing.Size(279, 31);
-            this.txtsearch.TabIndex = 28;
-            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
-            // 
             // FJADWAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -663,9 +680,10 @@ namespace SitiKanisa_Tiket_Kereta
         private System.Windows.Forms.DataGridViewImageColumn Column10;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2ComboBox cmbrute;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2TextBox txtsearch;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2Button btncetak;
     }
 }
