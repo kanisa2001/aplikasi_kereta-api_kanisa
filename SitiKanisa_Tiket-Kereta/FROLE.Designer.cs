@@ -312,6 +312,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.Name = "FROLE";
             this.Text = "user";
             this.Load += new System.EventHandler(this.FROLE_Load);
+            this.dgvrole.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvrole_CellClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrole)).EndInit();

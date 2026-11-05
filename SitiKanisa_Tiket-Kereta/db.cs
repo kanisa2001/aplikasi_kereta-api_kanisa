@@ -1,30 +1,60 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Reflection;
-using System.Windows.Forms;
 
 namespace SitiKanisa_Tiket_Kereta
 {
     class db
     {
-        public static MySqlConnection koneksi = new MySqlConnection("server=127.0.0.1; username=root; password=''; database='dbkereta_api'");
+        private static string connString = "server=127.0.0.1;user=root;password=;database=dbkereta_api;";
         public static DataSet ds = new DataSet();
-        public static MySqlDataAdapter da;
-        public static MySqlCommand perintah;
 
-        public static void crud(string queri)
+        /// <summary>
+        /// Jalankan query SELECT. Hasil tersimpan di db.ds.Tables[0].
+        /// Untuk INSERT/UPDATE/DELETE gunakan eksekusi() agar lebih tepat.
+        /// </summary>
+        public static void crud(string query)
         {
-            Console.WriteLine(queri);
             ds.Tables.Clear();
-            perintah = new MySqlCommand(queri, koneksi);
-            da = new MySqlDataAdapter(perintah);
-            da.Fill(ds);
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connString))
+                {
+                    con.Open();
+                    MySqlDataAdapter da = new MySqlDataAdapter(query, con);
+                    da.Fill(ds);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kesalahan database:\n" + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        /// <summary>
+        /// Jalankan query INSERT / UPDATE / DELETE.
+        /// Kembalikan true jika berhasil.
+        /// </summary>
+        public static bool eksekusi(string query)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connString))
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kesalahan database:\n" + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
     }
 }

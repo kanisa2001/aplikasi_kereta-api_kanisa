@@ -329,6 +329,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.Name = "FRUTE";
             this.Text = "FRUTE";
             this.Load += new System.EventHandler(this.FRUTE_Load);
+            this.tablerute.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablerute_CellClick_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablerute)).EndInit();

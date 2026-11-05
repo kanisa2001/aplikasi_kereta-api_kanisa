@@ -41,10 +41,10 @@ namespace SitiKanisa_Tiket_Kereta
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlnav = new System.Windows.Forms.Panel();
             this.lblrole = new System.Windows.Forms.Label();
             this.pnlkonten = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnlside.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlnav.SuspendLayout();
@@ -249,6 +249,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 605);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(200, 68);
+            this.guna2Panel1.TabIndex = 14;
+            // 
             // pnlnav
             // 
             this.pnlnav.BackColor = System.Drawing.Color.White;
@@ -261,8 +269,9 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // lblrole
             // 
+            this.lblrole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblrole.AutoSize = true;
-            this.lblrole.Location = new System.Drawing.Point(896, 25);
+            this.lblrole.Location = new System.Drawing.Point(817, 23);
             this.lblrole.Name = "lblrole";
             this.lblrole.Size = new System.Drawing.Size(42, 20);
             this.lblrole.TabIndex = 0;
@@ -276,14 +285,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.pnlkonten.Name = "pnlkonten";
             this.pnlkonten.Size = new System.Drawing.Size(959, 609);
             this.pnlkonten.TabIndex = 1;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 605);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(200, 68);
-            this.guna2Panel1.TabIndex = 14;
             // 
             // MENU
             // 

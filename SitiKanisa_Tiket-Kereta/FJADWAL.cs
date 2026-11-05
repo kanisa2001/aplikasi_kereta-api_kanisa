@@ -59,6 +59,7 @@ namespace SitiKanisa_Tiket_Kereta
             txtberangkat.Clear();
             txtharga.Clear();
             txtkapasitas.Clear();
+            label9.Text = "";
         }
 
         private void cmbkereta_DropDown(object sender, EventArgs e)
@@ -73,48 +74,37 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void btnsimpan_Click(object sender, EventArgs e)
         {
-            string krt = cmbkereta.Text;
+            string krt  = cmbkereta.Text;
             string rute = cmbrute.Text;
+            string brngkt = txtberangkat.Text.Trim();
+            string jamtb  = txttiba.Text.Trim();
+            string hrg    = txtharga.Text.Trim();
 
-            string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string brngkt = txtberangkat.Text + ":00";
-            string jamtb = txttiba.Text + ":00";
-            string hrg = txtharga.Text;
-
-            db.crud($@"SELECT idkereta FROM kereta
-               WHERE nama_kereta = '{krt}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (krt == "" || rute == "" || brngkt == "" || jamtb == "" || hrg == "")
             {
-                MessageBox.Show("Kereta tidak ditemukan!");
+                MessageBox.Show("Semua field harus diisi!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+
+            db.crud($"SELECT idkereta FROM kereta WHERE nama_kereta = '{krt}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Kereta tidak ditemukan!"); return; }
             string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
 
             string idrute = rute.Split('-')[0].Trim();
+            db.crud($"SELECT id_rute FROM rute WHERE id_rute = '{idrute}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Rute tidak ditemukan!"); return; }
 
-            db.crud($@"SELECT id_rute FROM rute
-               WHERE id_rute = '{idrute}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (db.eksekusi($"INSERT INTO jadwal (id_kereta, id_rute, tanggal, jam_berangkat, jam_tiba, Harga) " +
+                            $"VALUES ('{idkereta}', '{idrute}', '{tgglbrngkt}', '{brngkt}:00', '{jamtb}:00', '{hrg}')"))
             {
-                MessageBox.Show("Rute tidak ditemukan!");
-                return;
+                MessageBox.Show("Data jadwal berhasil disimpan!", "Informasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bersih();
+                tampildata();
             }
-
-            db.crud($@"INSERT INTO jadwal
-               (idjadwal, id_kereta, id_rute, tanggal, jam_berangkat, jam_tiba, Harga)
-               VALUES
-               (null, '{idkereta}', '{idrute}', '{tgglbrngkt}', '{brngkt}', '{jamtb}', '{hrg}')");
-
-            MessageBox.Show("Data jadwal berhasil disimpan!",
-                            "Informasi",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
-            bersih();
-            tampildata();
         }
 
         private void cmbkereta_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,7 +156,8 @@ namespace SitiKanisa_Tiket_Kereta
 
         private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-        
+            if (e.RowIndex < 0) return;
+
                 int baris = e.RowIndex;
                 int kolom = e.ColumnIndex;
 
@@ -260,67 +251,69 @@ namespace SitiKanisa_Tiket_Kereta
 
                 if (hasil == DialogResult.Yes)
                 {
-                    db.crud($"DELETE FROM jadwal WHERE idjadwal = '{id}'");
-
-                    tampildata();
-                    bersih();
+                    if (db.eksekusi($"DELETE FROM jadwal WHERE idjadwal = '{id}'"))
+                    {
+                        tampildata();
+                        bersih();
+                    }
                 }
             }
         }
 
         private void txtubah_Click(object sender, EventArgs e)
         {
-            string krt = cmbkereta.Text;
-            string rute = cmbrute.Text;
-
-            string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string brngkt = txtberangkat.Text + ":00";
-            string jamtb = txttiba.Text + ":00";
-            string hrg = txtharga.Text;
-
-            db.crud($@"SELECT idkereta FROM kereta
-               WHERE nama_kereta = '{krt}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (label9.Text == "")
             {
-                MessageBox.Show("Kereta tidak ditemukan!");
+                MessageBox.Show("Pilih data jadwal yang ingin diubah terlebih dahulu!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            string krt  = cmbkereta.Text;
+            string rute = cmbrute.Text;
+            string brngkt = txtberangkat.Text.Trim();
+            string jamtb  = txttiba.Text.Trim();
+            string hrg    = txtharga.Text.Trim();
+
+            if (krt == "" || rute == "" || brngkt == "" || jamtb == "" || hrg == "")
+            {
+                MessageBox.Show("Semua field harus diisi!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string tgglbrngkt = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+
+            db.crud($"SELECT idkereta FROM kereta WHERE nama_kereta = '{krt}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Kereta tidak ditemukan!"); return; }
             string idkereta = db.ds.Tables[0].Rows[0]["idkereta"].ToString();
 
             string idrute = rute.Split('-')[0].Trim();
+            db.crud($"SELECT id_rute FROM rute WHERE id_rute = '{idrute}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Rute tidak ditemukan!"); return; }
 
-            db.crud($@"SELECT id_rute FROM rute
-               WHERE id_rute = '{idrute}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (db.eksekusi($"UPDATE jadwal SET id_kereta='{idkereta}', id_rute='{idrute}', " +
+                            $"tanggal='{tgglbrngkt}', jam_berangkat='{brngkt}:00', " +
+                            $"jam_tiba='{jamtb}:00', Harga='{hrg}' " +
+                            $"WHERE idjadwal='{label9.Text}'"))
             {
-                MessageBox.Show("Rute tidak ditemukan!");
-                return;
+                MessageBox.Show("Data jadwal berhasil diubah!", "Informasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tampildata();
+                bersih();
+                label9.Text = "";
             }
-
-            db.crud($@"UPDATE jadwal SET
-               id_kereta = '{idkereta}',
-               id_rute = '{idrute}',
-               tanggal = '{tgglbrngkt}',
-               jam_berangkat = '{brngkt}',
-               jam_tiba = '{jamtb}',
-               Harga = '{hrg}'
-               WHERE idjadwal = '{label9.Text}'");
-
-            MessageBox.Show("Data jadwal berhasil diubah!",
-                            "Informasi",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
-            tampildata();
-            bersih();
-            label9.Text = "";
         }
 
         private void txttampildata_Click(object sender, EventArgs e)
         {
+            if (label9.Text == "")
+            {
+                MessageBox.Show("Pilih data jadwal yang ingin diubah terlebih dahulu!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string krt = cmbkereta.Text;
             string staw = txtstaw.Text;
             string sttuj = txtsttuj.Text;
@@ -359,17 +352,18 @@ namespace SitiKanisa_Tiket_Kereta
 
             string idrute = db.ds.Tables[0].Rows[0]["id_rute"].ToString();
 
-            db.crud($@"UPDATE jadwal SET
+            if (db.eksekusi($@"UPDATE jadwal SET
                id_kereta = '{idkereta}',
                id_rute = '{idrute}',
                tanggal = '{tgglbrngkt}',
                jam_berangkat = '{brngkt}',
                jam_tiba = '{jamtb}',
                Harga = '{hrg}'
-               WHERE idjadwal = '{label9.Text}'");
-
-            tampildata();
-            bersih();
+               WHERE idjadwal = '{label9.Text}'"))
+            {
+                tampildata();
+                bersih();
+            }
         }
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)

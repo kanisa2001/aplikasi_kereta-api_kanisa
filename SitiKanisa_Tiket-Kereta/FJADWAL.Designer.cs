@@ -340,7 +340,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btncetak.Name = "btncetak";
             this.btncetak.Size = new System.Drawing.Size(180, 45);
             this.btncetak.TabIndex = 29;
-            this.btncetak.Text = "guna2Button1";
+            this.btncetak.Text = "Report";
             this.btncetak.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label11

@@ -49,6 +49,8 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.crystalOpenFileDialog1 = new CrystalDecisions.Shared.Interop.CrystalOpenFileDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvriwayat)).BeginInit();
             this.SuspendLayout();
@@ -230,6 +232,14 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             this.crystalOpenFileDialog1.FileName = "crystalOpenFileDialog1";
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.Document = this.printDocument1;
+            // 
             // RIWAYAT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -267,5 +277,7 @@ namespace SitiKanisa_Tiket_Kereta
         private System.Windows.Forms.DataGridViewImageColumn Column10;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private CrystalDecisions.Shared.Interop.CrystalOpenFileDialog crystalOpenFileDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

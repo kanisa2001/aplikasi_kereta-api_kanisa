@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SitiKanisa_Tiket_Kereta
@@ -17,182 +11,168 @@ namespace SitiKanisa_Tiket_Kereta
             InitializeComponent();
         }
 
-        public void tampildata()
+        private void FRUTE_Load(object sender, EventArgs e)
         {
-            tablerute.Rows.Clear();
+            tablerute.DataError += (s, ex) => { ex.Cancel = true; };
+            isiStasiun();
+            tampildata();
+        }
 
-            db.crud($@"SELECT rute.id_rute,
-               asal.nama_stasiun AS stasiun_asal,
-               tujuan.nama_stasiun AS stasiun_tujuan
-               FROM rute
-               INNER JOIN stasiun AS asal ON rute.id_stasiun_asal = asal.id_stasiun
-               INNER JOIN stasiun AS tujuan ON rute.id_stasiun_tujuan = tujuan.id_stasiun");
-
-            int no = 1;
-
-            foreach (DataRow baris in db.ds.Tables[0].Rows)
+        private void isiStasiun()
+        {
+            db.crud("SELECT nama_stasiun FROM stasiun ORDER BY nama_stasiun");
+            cbasal.Items.Clear();
+            cbtujuan.Items.Clear();
+            foreach (DataRow row in db.ds.Tables[0].Rows)
             {
-                string idr = baris["id_rute"].ToString();
-                string asal = baris["stasiun_asal"].ToString();
-                string tujuan = baris["stasiun_tujuan"].ToString();
-
-                tablerute.Rows.Add(
-                    idr,
-                    no,
-                    asal,
-                    tujuan
-                );
-
-                no++;
+                cbasal.Items.Add(row["nama_stasiun"].ToString());
+                cbtujuan.Items.Add(row["nama_stasiun"].ToString());
             }
         }
 
         public void bersih()
         {
-            cbasal.Text = "";
+            cbasal.Text   = "";
             cbtujuan.Text = "";
+            LBLID.Text    = "";
         }
-        
 
-        private void tablerute_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void tampildata()
         {
-
+            tablerute.Rows.Clear();
+            db.crud("SELECT rute.id_rute, asal.nama_stasiun AS stasiun_asal, " +
+                    "tujuan.nama_stasiun AS stasiun_tujuan " +
+                    "FROM rute " +
+                    "INNER JOIN stasiun AS asal ON rute.id_stasiun_asal = asal.id_stasiun " +
+                    "INNER JOIN stasiun AS tujuan ON rute.id_stasiun_tujuan = tujuan.id_stasiun " +
+                    "ORDER BY rute.id_rute");
+            int no = 1;
+            foreach (DataRow baris in db.ds.Tables[0].Rows)
+            {
+                tablerute.Rows.Add(
+                    baris["id_rute"].ToString(),
+                    no,
+                    baris["stasiun_asal"].ToString(),
+                    baris["stasiun_tujuan"].ToString()
+                );
+                no++;
+            }
         }
 
         private void btnsimpan_Click(object sender, EventArgs e)
         {
-            string asal = cbasal.Text;
+            string asal   = cbasal.Text;
             string tujuan = cbtujuan.Text;
 
-            db.crud($@"SELECT id_stasiun FROM stasiun 
-               WHERE nama_stasiun = '{asal}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (asal == "" || tujuan == "")
             {
-                MessageBox.Show("Stasiun asal tidak ditemukan");
+                MessageBox.Show("Stasiun asal dan tujuan harus dipilih!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string idasal = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
-
-            db.crud($@"SELECT id_stasiun FROM stasiun 
-               WHERE nama_stasiun = '{tujuan}'");
-
-            if (db.ds.Tables[0].Rows.Count == 0)
+            if (asal == tujuan)
             {
-                MessageBox.Show("Stasiun tujuan tidak ditemukan");
+                MessageBox.Show("Stasiun asal dan tujuan tidak boleh sama!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string idtujuan = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
+            db.crud($"SELECT id_stasiun FROM stasiun WHERE nama_stasiun = '{asal}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Stasiun asal tidak ditemukan!"); return; }
+            string idAsal = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
 
-            db.crud($@"INSERT INTO rute
-               (id_rute, id_stasiun_asal, id_stasiun_tujuan)
-               VALUES (null, '{idasal}', '{idtujuan}')");
+            db.crud($"SELECT id_stasiun FROM stasiun WHERE nama_stasiun = '{tujuan}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Stasiun tujuan tidak ditemukan!"); return; }
+            string idTujuan = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
 
-            MessageBox.Show("Data rute berhasil disimpan!");
-
-            tampildata();
-            bersih();
-        }
-
-
-        private void FRUTE_Load(object sender, EventArgs e)
-        {
-            tablerute.DataError += (s, ex) => { ex.Cancel = true; };
-            tampildata();
-
-            cbasal.Items.Clear();
-            db.crud("SELECT nama_stasiun FROM stasiun");
-            foreach (DataRow row in db.ds.Tables[0].Rows)
+            if (db.eksekusi($"INSERT INTO rute (id_stasiun_asal, id_stasiun_tujuan) " +
+                            $"VALUES ('{idAsal}', '{idTujuan}')"))
             {
-                cbasal.Items.Add(row["nama_stasiun"].ToString());
+                MessageBox.Show("Data rute berhasil disimpan!", "Informasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tampildata();
+                bersih();
             }
-
-            cbtujuan.Items.Clear();
-            db.crud("SELECT nama_stasiun FROM stasiun");
-            foreach (DataRow row in db.ds.Tables[0].Rows)
-            {
-                cbtujuan.Items.Add(row["nama_stasiun"].ToString());
-            }
-        }
-
-        private void btntampil_Click(object sender, EventArgs e)
-        {
-            tampildata();
         }
 
         private void btnubah_Click(object sender, EventArgs e)
         {
-            string asal = cbasal.Text;
+            if (LBLID.Text == "")
+            {
+                MessageBox.Show("Pilih data yang ingin diubah terlebih dahulu!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string asal   = cbasal.Text;
             string tujuan = cbtujuan.Text;
 
-            db.crud($@"SELECT id_stasiun FROM stasiun 
-               WHERE nama_stasiun = '{asal}'");
+            if (asal == "" || tujuan == "")
+            {
+                MessageBox.Show("Stasiun asal dan tujuan harus dipilih!", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            string idasal = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
+            db.crud($"SELECT id_stasiun FROM stasiun WHERE nama_stasiun = '{asal}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Stasiun asal tidak ditemukan!"); return; }
+            string idAsal = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
 
-            db.crud($@"SELECT id_stasiun FROM stasiun 
-               WHERE nama_stasiun = '{tujuan}'");
+            db.crud($"SELECT id_stasiun FROM stasiun WHERE nama_stasiun = '{tujuan}'");
+            if (db.ds.Tables[0].Rows.Count == 0) { MessageBox.Show("Stasiun tujuan tidak ditemukan!"); return; }
+            string idTujuan = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
 
-            string idtujuan = db.ds.Tables[0].Rows[0]["id_stasiun"].ToString();
-
-            db.crud($@"UPDATE rute SET
-               id_stasiun_asal = '{idasal}',
-               id_stasiun_tujuan = '{idtujuan}'
-               WHERE id_rute = '{LBLID.Text}'");
-
-            tampildata();
-            bersih();
-            LBLID.Text = "";
+            if (db.eksekusi($"UPDATE rute SET id_stasiun_asal='{idAsal}', id_stasiun_tujuan='{idTujuan}' " +
+                            $"WHERE id_rute='{LBLID.Text}'"))
+            {
+                tampildata();
+                bersih();
+            }
         }
 
         private void tablerute_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+
             int baris = e.RowIndex;
             int kolom = e.ColumnIndex;
 
-            if (baris < 0)
-                return;
-
+            // Kolom 4 = Edit
             if (kolom == 4)
             {
-                string idr = tablerute.Rows[baris].Cells[0].Value.ToString();
+                string id = tablerute.Rows[baris].Cells[0].Value.ToString();
+                db.crud($"SELECT rute.id_rute, asal.nama_stasiun AS stasiun_asal, " +
+                        $"tujuan.nama_stasiun AS stasiun_tujuan " +
+                        $"FROM rute " +
+                        $"INNER JOIN stasiun AS asal ON rute.id_stasiun_asal = asal.id_stasiun " +
+                        $"INNER JOIN stasiun AS tujuan ON rute.id_stasiun_tujuan = tujuan.id_stasiun " +
+                        $"WHERE rute.id_rute = '{id}'");
 
-                if (db.ds != null) db.ds.Clear();
-
-                db.crud($@"SELECT rute.id_rute, 
-               asal.nama_stasiun AS stasiun_asal,
-               tujuan.nama_stasiun AS stasiun_tujuan
-               FROM rute
-               INNER JOIN stasiun AS asal ON rute.id_stasiun_asal = asal.id_stasiun
-               INNER JOIN stasiun AS tujuan ON rute.id_stasiun_tujuan = tujuan.id_stasiun
-               WHERE rute.id_rute = '{idr}'");
-
-                foreach (DataRow brs in db.ds.Tables[0].Rows)
+                if (db.ds.Tables[0].Rows.Count > 0)
                 {
-                    string id = "" + brs["id_rute"];
-                    string asal = "" + brs["stasiun_asal"];
-                    string tujuan = "" + brs["stasiun_tujuan"];
-
-                    LBLID.Text = id;
-                    cbasal.Text = asal;
-                    cbtujuan.Text = tujuan;
+                    DataRow brs = db.ds.Tables[0].Rows[0];
+                    LBLID.Text    = id;
+                    cbasal.Text   = brs["stasiun_asal"].ToString();
+                    cbtujuan.Text = brs["stasiun_tujuan"].ToString();
                 }
             }
 
+            // Kolom 5 = Hapus
             if (kolom == 5)
             {
                 string id = tablerute.Rows[baris].Cells[0].Value.ToString();
+                DialogResult konfirmasi = MessageBox.Show(
+                    "Yakin ingin menghapus data rute ini?", "Konfirmasi",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                DialogResult hasil = MessageBox.Show("Yakin mau hapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (hasil == DialogResult.Yes)
+                if (konfirmasi == DialogResult.Yes)
                 {
-                    db.crud($"DELETE FROM rute WHERE id_rute = '{id}'");
-
-                    tampildata();
-                    bersih();
+                    if (db.eksekusi($"DELETE FROM rute WHERE id_rute = '{id}'"))
+                    {
+                        tampildata();
+                        bersih();
+                    }
                 }
             }
         }
@@ -200,32 +180,27 @@ namespace SitiKanisa_Tiket_Kereta
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             tablerute.Rows.Clear();
-
             string cari = txtsearch.Text;
-
-            db.crud($@"SELECT rute.id_rute, 
-               asal.nama_stasiun AS stasiun_asal, 
-               tujuan.nama_stasiun AS stasiun_tujuan
-               FROM rute
-               INNER JOIN stasiun AS asal 
-               ON rute.id_stasiun_asal = asal.id_stasiun
-               INNER JOIN stasiun AS tujuan 
-               ON rute.id_stasiun_tujuan = tujuan.id_stasiun
-               WHERE asal.nama_stasiun LIKE '%{cari}%'
-               OR tujuan.nama_stasiun LIKE '%{cari}%'");
-
+            db.crud($"SELECT rute.id_rute, asal.nama_stasiun AS stasiun_asal, " +
+                    $"tujuan.nama_stasiun AS stasiun_tujuan " +
+                    $"FROM rute " +
+                    $"INNER JOIN stasiun AS asal ON rute.id_stasiun_asal = asal.id_stasiun " +
+                    $"INNER JOIN stasiun AS tujuan ON rute.id_stasiun_tujuan = tujuan.id_stasiun " +
+                    $"WHERE asal.nama_stasiun LIKE '%{cari}%' OR tujuan.nama_stasiun LIKE '%{cari}%'");
             int no = 1;
-
             foreach (DataRow baris in db.ds.Tables[0].Rows)
             {
-                string idr = baris["id_rute"].ToString();
-                string asal = baris["stasiun_asal"].ToString();
-                string tujuan = baris["stasiun_tujuan"].ToString();
-
-                tablerute.Rows.Add(idr, no, asal, tujuan);
-
+                tablerute.Rows.Add(
+                    baris["id_rute"].ToString(), no,
+                    baris["stasiun_asal"].ToString(),
+                    baris["stasiun_tujuan"].ToString()
+                );
                 no++;
             }
         }
+
+        // Handler kosong yang dibutuhkan designer
+        private void btntampil_Click(object sender, EventArgs e) { tampildata(); }
+        private void tablerute_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

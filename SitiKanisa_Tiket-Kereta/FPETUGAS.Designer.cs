@@ -91,6 +91,7 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // btntampil
             // 
+            this.btntampil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btntampil.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btntampil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btntampil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -102,6 +103,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btntampil.Size = new System.Drawing.Size(44, 33);
             this.btntampil.TabIndex = 32;
             this.btntampil.Text = "Tampil";
+            this.btntampil.Click += new System.EventHandler(this.btntampil_Click);
             // 
             // tablepetugas
             // 
@@ -151,6 +153,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablepetugas.ThemeStyle.ReadOnly = true;
             this.tablepetugas.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tablepetugas.ThemeStyle.RowsStyle.Height = 28;
+            this.tablepetugas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablepetugas_CellClick);
             // 
             // Column6
             // 
@@ -246,6 +249,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah.Size = new System.Drawing.Size(128, 33);
             this.btnubah.TabIndex = 31;
             this.btnubah.Text = "Ubah";
+            this.btnubah.Click += new System.EventHandler(this.btnubah_Click_1);
             // 
             // txtsearch
             // 
@@ -268,6 +272,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtsearch.SelectedText = "";
             this.txtsearch.Size = new System.Drawing.Size(276, 31);
             this.txtsearch.TabIndex = 30;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // cbrole
             // 
@@ -284,6 +289,8 @@ namespace SitiKanisa_Tiket_Kereta
             this.cbrole.Name = "cbrole";
             this.cbrole.Size = new System.Drawing.Size(473, 36);
             this.cbrole.TabIndex = 29;
+            this.cbrole.DropDown += new System.EventHandler(this.cbrole_DropDown);
+            this.cbrole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbrole_KeyPress);
             // 
             // txtpass
             // 
@@ -293,6 +300,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(473, 36);
             this.txtpass.TabIndex = 28;
+            this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
             // 
             // label4
             // 
@@ -328,6 +336,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.Size = new System.Drawing.Size(126, 33);
             this.btnsimpan.TabIndex = 24;
             this.btnsimpan.Text = "Simpan";
+            this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click_1);
             // 
             // cbstatus
             // 
@@ -344,6 +353,9 @@ namespace SitiKanisa_Tiket_Kereta
             this.cbstatus.Name = "cbstatus";
             this.cbstatus.Size = new System.Drawing.Size(473, 36);
             this.cbstatus.TabIndex = 27;
+            this.cbstatus.DropDown += new System.EventHandler(this.cbstatus_DropDown);
+            this.cbstatus.SelectedIndexChanged += new System.EventHandler(this.cbstatus_SelectedIndexChanged);
+            this.cbstatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbstatus_KeyPress);
             // 
             // label3
             // 
@@ -363,6 +375,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(473, 36);
             this.txtuser.TabIndex = 21;
+            this.txtuser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtuser_KeyPress);
             // 
             // label1
             // 

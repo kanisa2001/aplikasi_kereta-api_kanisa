@@ -445,6 +445,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.Name = "FKERETA";
             this.Text = "FKERETA";
             this.Load += new System.EventHandler(this.FKERETA_Load);
+            this.tablekereta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablekereta_CellClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablekereta)).EndInit();

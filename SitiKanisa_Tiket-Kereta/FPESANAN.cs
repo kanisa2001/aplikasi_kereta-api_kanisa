@@ -17,8 +17,9 @@ namespace SitiKanisa_Tiket_Kereta
         {
             InitializeComponent();
 
+            // cmbrute.SelectedIndexChanged hanya di-wire di sini (tidak ada di designer)
             cmbrute.SelectedIndexChanged += cmbrute_SelectedIndexChanged;
-            txttiket.TextChanged += txttiket_TextChanged;
+            // txttiket.TextChanged sudah di-wire di designer, tidak perlu ditambah lagi
         }
 
         public void bersih()
@@ -123,20 +124,16 @@ namespace SitiKanisa_Tiket_Kereta
                 }
             }
 
-            db.crud($@"INSERT INTO pemesanan
-                       (id_pemesanan, id_jadwal, nama_pemesan, no_identitas, no_telp,
-                       jumlah_tiket, metode_bayar, tanggal_pemesanan, harga, total_harga)
-                       VALUES
-                       (NULL, '{idjadwal}', '{nm}', '{noid}', '{notelp}',
-                       '{tkt}', '{byr}', NOW(), '{hrg}', '{ttl}')");
-
-            MessageBox.Show(
-                "Pemesanan berhasil disimpan!",
-                "Informasi",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            hitungTersedia();
+            if (db.eksekusi($"INSERT INTO pemesanan " +
+                       $"(id_pemesanan, id_jadwal, nama_pemesan, no_identitas, no_telp, " +
+                       $"jumlah_tiket, metode_bayar, tanggal_pemesanan, harga, total_harga) " +
+                       $"VALUES (NULL, '{idjadwal}', '{nm}', '{noid}', '{notelp}', " +
+                       $"'{tkt}', '{byr}', NOW(), '{hrg}', '{ttl}')"))
+            {
+                MessageBox.Show("Pemesanan berhasil disimpan!", "Informasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                hitungTersedia();
+            }
         }
 
         private void txtnama_TextChanged(object sender, EventArgs e)
