@@ -39,10 +39,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LBLID = new System.Windows.Forms.Label();
-            this.btntampil = new Guna.UI2.WinForms.Guna2Button();
-            this.btnubah = new Guna.UI2.WinForms.Guna2Button();
-            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.dgvrole = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +47,10 @@ namespace SitiKanisa_Tiket_Kereta
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Hapus = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label12 = new System.Windows.Forms.Label();
+            this.LBLID = new System.Windows.Forms.Label();
+            this.btntampil = new Guna.UI2.WinForms.Guna2Button();
+            this.btnubah = new Guna.UI2.WinForms.Guna2Button();
+            this.txtsearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrole)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +64,9 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(966, 213);
+            this.btnsimpan.Location = new System.Drawing.Point(1022, 213);
             this.btnsimpan.Name = "btnsimpan";
-            this.btnsimpan.Size = new System.Drawing.Size(155, 33);
+            this.btnsimpan.Size = new System.Drawing.Size(99, 45);
             this.btnsimpan.TabIndex = 9;
             this.btnsimpan.Text = "Simpan";
             this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
@@ -131,71 +131,17 @@ namespace SitiKanisa_Tiket_Kereta
             this.panel1.Size = new System.Drawing.Size(1167, 669);
             this.panel1.TabIndex = 20;
             // 
-            // LBLID
+            // label12
             // 
-            this.LBLID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.LBLID.AutoSize = true;
-            this.LBLID.Location = new System.Drawing.Point(12, 121);
-            this.LBLID.Name = "LBLID";
-            this.LBLID.Size = new System.Drawing.Size(26, 20);
-            this.LBLID.TabIndex = 25;
-            this.LBLID.Text = "ID";
-            this.LBLID.Visible = false;
-            // 
-            // btntampil
-            // 
-            this.btntampil.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btntampil.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btntampil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btntampil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btntampil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btntampil.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btntampil.ForeColor = System.Drawing.Color.White;
-            this.btntampil.Location = new System.Drawing.Point(966, 283);
-            this.btntampil.Name = "btntampil";
-            this.btntampil.Size = new System.Drawing.Size(155, 33);
-            this.btntampil.TabIndex = 24;
-            this.btntampil.Text = "Tampil";
-            this.btntampil.Click += new System.EventHandler(this.btntampil_Click);
-            // 
-            // btnubah
-            // 
-            this.btnubah.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnubah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnubah.ForeColor = System.Drawing.Color.White;
-            this.btnubah.Location = new System.Drawing.Point(792, 213);
-            this.btnubah.Name = "btnubah";
-            this.btnubah.Size = new System.Drawing.Size(155, 33);
-            this.btnubah.TabIndex = 23;
-            this.btnubah.Text = "Ubah";
-            this.btnubah.Click += new System.EventHandler(this.btnubah_Click_1);
-            // 
-            // txtsearch
-            // 
-            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtsearch.BorderRadius = 10;
-            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsearch.DefaultText = "";
-            this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconRight")));
-            this.txtsearch.Location = new System.Drawing.Point(860, 36);
-            this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtsearch.Name = "txtsearch";
-            this.txtsearch.PlaceholderText = "Search";
-            this.txtsearch.SelectedText = "";
-            this.txtsearch.Size = new System.Drawing.Size(279, 31);
-            this.txtsearch.TabIndex = 22;
-            this.txtsearch.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(457, 82);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(250, 34);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "DAFTAR ROLE";
             // 
             // dgvrole
             // 
@@ -244,6 +190,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.dgvrole.ThemeStyle.ReadOnly = true;
             this.dgvrole.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvrole.ThemeStyle.RowsStyle.Height = 28;
+            this.dgvrole.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvrole_CellClick);
             // 
             // Column3
             // 
@@ -291,17 +238,73 @@ namespace SitiKanisa_Tiket_Kereta
             this.Hapus.Name = "Hapus";
             this.Hapus.ReadOnly = true;
             // 
-            // label12
+            // LBLID
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(457, 82);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(250, 34);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "DAFTAR ROLE";
+            this.LBLID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LBLID.AutoSize = true;
+            this.LBLID.Location = new System.Drawing.Point(12, 121);
+            this.LBLID.Name = "LBLID";
+            this.LBLID.Size = new System.Drawing.Size(26, 20);
+            this.LBLID.TabIndex = 25;
+            this.LBLID.Text = "ID";
+            this.LBLID.Visible = false;
+            // 
+            // btntampil
+            // 
+            this.btntampil.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btntampil.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btntampil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btntampil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btntampil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btntampil.FillColor = System.Drawing.Color.DarkGray;
+            this.btntampil.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btntampil.ForeColor = System.Drawing.Color.White;
+            this.btntampil.Location = new System.Drawing.Point(1115, 283);
+            this.btntampil.Name = "btntampil";
+            this.btntampil.Size = new System.Drawing.Size(40, 33);
+            this.btntampil.TabIndex = 24;
+            this.btntampil.Text = "Tampil";
+            this.btntampil.Click += new System.EventHandler(this.btntampil_Click);
+            // 
+            // btnubah
+            // 
+            this.btnubah.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnubah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnubah.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnubah.ForeColor = System.Drawing.Color.White;
+            this.btnubah.Location = new System.Drawing.Point(903, 213);
+            this.btnubah.Name = "btnubah";
+            this.btnubah.Size = new System.Drawing.Size(99, 45);
+            this.btnubah.TabIndex = 23;
+            this.btnubah.Text = "Ubah";
+            this.btnubah.Click += new System.EventHandler(this.btnubah_Click_1);
+            // 
+            // txtsearch
+            // 
+            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsearch.BorderRadius = 10;
+            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsearch.DefaultText = "";
+            this.txtsearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsearch.IconRight = ((System.Drawing.Image)(resources.GetObject("txtsearch.IconRight")));
+            this.txtsearch.Location = new System.Drawing.Point(860, 36);
+            this.txtsearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.PlaceholderText = "Search";
+            this.txtsearch.SelectedText = "";
+            this.txtsearch.Size = new System.Drawing.Size(279, 31);
+            this.txtsearch.TabIndex = 22;
+            this.txtsearch.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // FROLE
             // 
@@ -312,7 +315,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.Name = "FROLE";
             this.Text = "user";
             this.Load += new System.EventHandler(this.FROLE_Load);
-            this.dgvrole.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvrole_CellClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrole)).EndInit();

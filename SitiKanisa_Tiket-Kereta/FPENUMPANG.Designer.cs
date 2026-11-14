@@ -30,9 +30,9 @@ namespace SitiKanisa_Tiket_Kereta
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPENUMPANG));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtindetitas = new System.Windows.Forms.TextBox();
             this.txttujuan = new System.Windows.Forms.Label();
@@ -45,13 +45,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlbase = new Guna.UI2.WinForms.Guna2Panel();
             this.tablepenumpang = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtnama = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmdkelamin = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txttelp = new System.Windows.Forms.TextBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +52,13 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Hapus = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtnama = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmdkelamin = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txttelp = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.pnlbase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablepenumpang)).BeginInit();
@@ -125,11 +125,12 @@ namespace SitiKanisa_Tiket_Kereta
             this.btntampil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btntampil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btntampil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btntampil.FillColor = System.Drawing.Color.DarkGray;
             this.btntampil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btntampil.ForeColor = System.Drawing.Color.White;
-            this.btntampil.Location = new System.Drawing.Point(955, 284);
+            this.btntampil.Location = new System.Drawing.Point(773, 284);
             this.btntampil.Name = "btntampil";
-            this.btntampil.Size = new System.Drawing.Size(155, 33);
+            this.btntampil.Size = new System.Drawing.Size(99, 45);
             this.btntampil.TabIndex = 24;
             this.btntampil.Text = "Tampil";
             this.btntampil.Click += new System.EventHandler(this.btntampil_Click);
@@ -141,11 +142,12 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnubah.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnubah.ForeColor = System.Drawing.Color.White;
-            this.btnubah.Location = new System.Drawing.Point(583, 284);
+            this.btnubah.Location = new System.Drawing.Point(887, 284);
             this.btnubah.Name = "btnubah";
-            this.btnubah.Size = new System.Drawing.Size(155, 33);
+            this.btnubah.Size = new System.Drawing.Size(99, 45);
             this.btnubah.TabIndex = 23;
             this.btnubah.Text = "Ubah";
             this.btnubah.Click += new System.EventHandler(this.btnubah_Click);
@@ -182,9 +184,9 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(762, 284);
+            this.btnsimpan.Location = new System.Drawing.Point(1001, 284);
             this.btnsimpan.Name = "btnsimpan";
-            this.btnsimpan.Size = new System.Drawing.Size(155, 33);
+            this.btnsimpan.Size = new System.Drawing.Size(99, 45);
             this.btnsimpan.TabIndex = 9;
             this.btnsimpan.Text = "Simpan";
             this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
@@ -227,18 +229,18 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             this.tablepenumpang.AllowUserToAddRows = false;
             this.tablepenumpang.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tablepenumpang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.tablepenumpang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablepenumpang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablepenumpang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablepenumpang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tablepenumpang.ColumnHeadersHeight = 22;
             this.tablepenumpang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tablepenumpang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -249,14 +251,14 @@ namespace SitiKanisa_Tiket_Kereta
             this.Column5,
             this.Edit,
             this.Hapus});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablepenumpang.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablepenumpang.DefaultCellStyle = dataGridViewCellStyle6;
             this.tablepenumpang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tablepenumpang.Location = new System.Drawing.Point(3, 368);
             this.tablepenumpang.Name = "tablepenumpang";
@@ -274,6 +276,59 @@ namespace SitiKanisa_Tiket_Kereta
             this.tablepenumpang.ThemeStyle.RowsStyle.Height = 28;
             this.tablepenumpang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablepenumpang_CellClick);
             this.tablepenumpang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablepenumpang_CellContentClick);
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ID";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nama ";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.HeaderText = "NIK";
+            this.Role.MinimumWidth = 8;
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Jenis Kelamin";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "No Telpo";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Edit.MinimumWidth = 8;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            // 
+            // Hapus
+            // 
+            this.Hapus.HeaderText = "Hapus";
+            this.Hapus.Image = ((System.Drawing.Image)(resources.GetObject("Hapus.Image")));
+            this.Hapus.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Hapus.MinimumWidth = 8;
+            this.Hapus.Name = "Hapus";
+            this.Hapus.ReadOnly = true;
             // 
             // label9
             // 
@@ -357,59 +412,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.dataGridViewImageColumn1.MinimumWidth = 8;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 202;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ID";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nama ";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.HeaderText = "NIK";
-            this.Role.MinimumWidth = 8;
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Jenis Kelamin";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "No Telpo";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Edit.MinimumWidth = 8;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            // 
-            // Hapus
-            // 
-            this.Hapus.HeaderText = "Hapus";
-            this.Hapus.Image = ((System.Drawing.Image)(resources.GetObject("Hapus.Image")));
-            this.Hapus.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Hapus.MinimumWidth = 8;
-            this.Hapus.Name = "Hapus";
-            this.Hapus.ReadOnly = true;
             // 
             // FPENUMPANG
             // 

@@ -184,3 +184,52 @@ Constructor secara manual mendaftarkan `txttiket.TextChanged` yang sudah di-wire
 3. **Pengujian Runtime** — Karena tidak ada akses ke database MySQL lokal, pengujian end-to-end (koneksi DB, INSERT/SELECT aktual) belum bisa dikonfirmasi. Perlu diuji manual dengan database `dbkereta_api` aktif.
 
 4. **`txttampildata_Click` di FJADWAL** — Tombol ini menggunakan rute via `id_rute = rute.id_kereta` yang kemungkinan merupakan kolom yang tidak ada. Query fallback ini perlu diuji dengan data aktual.
+
+
+---
+
+## Perbaikan Layout Sidebar & Menu JADWAL2
+
+### File yang Diperbaiki
+
+| File | Perubahan |
+|------|-----------|
+| `MENU.Designer.cs` | Perbaikan layout sidebar — lebar, posisi tombol, logo, label, logout |
+| `MENU.cs` | `RapiButtonMenu()` dibuat dinamis per-grup; `TerapkanAksesRole()` diperbaiki; `guna2Button8_Click` akses diubah ke super admin |
+
+### Komponen Layout yang Diubah
+
+| Komponen | Sebelum | Sesudah |
+|----------|---------|---------|
+| `pnlside` lebar | 200 px | 230 px |
+| Semua tombol menu lebar | 191 px | 212 px |
+| `guna2Panel1` (logout container) | `Anchor = Bottom\|Left` (tidak ikut resize) | `Dock = Bottom` |
+| `pictureBox1` logo `SizeMode` | `StretchImage` (bisa terdistorsi) | `Zoom` (proporsional) |
+| `pictureBox1` ukuran | 154 × 43 px | 190 × 52 px |
+| Header `pnlnav` tinggi | 64 px | 56 px |
+| Label separator font | default | `Segoe UI 7.5F` (lebih konsisten) |
+| Tombol `guna2Button9` teks | "JADWAL USER" | "JADWAL2" |
+| `RapiButtonMenu()` | Hanya geser Y tombol, label separator tidak bergerak | Seluruh grup + label separator bergerak secara dinamis |
+
+### Implementasi JADWAL2 untuk Admin
+
+- `guna2Button9` diberi label teks **"JADWAL2"**
+- Dalam `TerapkanAksesRole()`: hanya `Visible = true` ketika `role == "admin"`
+- Handler `guna2Button9_Click` memanggil `CekAkses(new[] { "admin" })` → membuka form `JADWAL2`
+
+### Konfirmasi JADWAL Tetap Khusus Super Admin
+
+- `guna2Button8` (JADWAL) hanya `Visible = true` ketika `role == "super admin"`
+- Handler `guna2Button8_Click` memanggil `CekAkses(new[] { "super admin" })` — **diubah dari `"admin"` menjadi `"super admin"`** (koreksi bug di versi sebelumnya)
+- Admin tidak dapat melihat maupun mengakses menu JADWAL
+
+### Konfirmasi Sistem Login & Hak Akses Tidak Diubah
+
+- Logika login di `Form1.cs` tidak disentuh
+- Mekanisme `CekAkses()` di `MENU.cs` tidak diubah
+- Seluruh handler CRUD di setiap form tidak diubah
+- Koneksi database dan query tidak diubah
+
+### Hasil Build
+
+`✅ Build SUCCEEDED` — tidak ada error atau warning kompilasi (MSBuild v16.9, VS2019)

@@ -232,6 +232,12 @@
     <Compile Include="RIWAYAT.Designer.cs">
       <DependentUpon>RIWAYAT.cs</DependentUpon>
     </Compile>
+    <Compile Include="JADWAL2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JADWAL2.Designer.cs">
+      <DependentUpon>JADWAL2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FGERBONG.resx">
       <DependentUpon>FGERBONG.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRUTE.resx">
       <DependentUpon>FRUTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JADWAL2.resx">
+      <DependentUpon>JADWAL2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MENU.resx">
       <DependentUpon>MENU.cs</DependentUpon>

@@ -122,6 +122,7 @@ namespace SitiKanisa_Tiket_Kereta
                     hitungTersedia();
                     return;
                 }
+                
             }
 
             if (db.eksekusi($"INSERT INTO pemesanan " +
@@ -133,6 +134,7 @@ namespace SitiKanisa_Tiket_Kereta
                 MessageBox.Show("Pemesanan berhasil disimpan!", "Informasi",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 hitungTersedia();
+                bersih();
             }
         }
 

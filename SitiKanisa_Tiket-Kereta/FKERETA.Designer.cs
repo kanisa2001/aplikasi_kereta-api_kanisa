@@ -34,6 +34,17 @@ namespace SitiKanisa_Tiket_Kereta
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FKERETA));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tablekereta = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Hapus = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtharga = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtkursi = new System.Windows.Forms.TextBox();
@@ -51,17 +62,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tablekereta = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Hapus = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablekereta)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +91,137 @@ namespace SitiKanisa_Tiket_Kereta
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1415, 714);
             this.panel1.TabIndex = 22;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(507, 71);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(298, 34);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "DAFTAR KERETA";
+            // 
+            // tablekereta
+            // 
+            this.tablekereta.AllowUserToAddRows = false;
+            this.tablekereta.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tablekereta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablekereta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablekereta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablekereta.ColumnHeadersHeight = 22;
+            this.tablekereta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.tablekereta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.Column1,
+            this.Column2,
+            this.Role,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Edit,
+            this.Hapus});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tablekereta.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tablekereta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tablekereta.Location = new System.Drawing.Point(0, 395);
+            this.tablekereta.Name = "tablekereta";
+            this.tablekereta.ReadOnly = true;
+            this.tablekereta.RowHeadersVisible = false;
+            this.tablekereta.RowHeadersWidth = 62;
+            this.tablekereta.RowTemplate.Height = 28;
+            this.tablekereta.Size = new System.Drawing.Size(1415, 319);
+            this.tablekereta.TabIndex = 34;
+            this.tablekereta.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.tablekereta.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablekereta.ThemeStyle.HeaderStyle.Height = 22;
+            this.tablekereta.ThemeStyle.ReadOnly = true;
+            this.tablekereta.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tablekereta.ThemeStyle.RowsStyle.Height = 28;
+            this.tablekereta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablekereta_CellClick);
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ID";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "No";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nama Kereta";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.HeaderText = "Jenis Kereta";
+            this.Role.MinimumWidth = 8;
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Jumlah Kursi";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Status";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Harga";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Edit.MinimumWidth = 8;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            // 
+            // Hapus
+            // 
+            this.Hapus.HeaderText = "Hapus";
+            this.Hapus.Image = ((System.Drawing.Image)(resources.GetObject("Hapus.Image")));
+            this.Hapus.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Hapus.MinimumWidth = 8;
+            this.Hapus.Name = "Hapus";
+            this.Hapus.ReadOnly = true;
             // 
             // txtharga
             // 
@@ -204,11 +335,12 @@ namespace SitiKanisa_Tiket_Kereta
             this.btntampil.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btntampil.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btntampil.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btntampil.FillColor = System.Drawing.Color.DarkGray;
             this.btntampil.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btntampil.ForeColor = System.Drawing.Color.White;
-            this.btntampil.Location = new System.Drawing.Point(1182, 301);
+            this.btntampil.Location = new System.Drawing.Point(1003, 292);
             this.btntampil.Name = "btntampil";
-            this.btntampil.Size = new System.Drawing.Size(155, 33);
+            this.btntampil.Size = new System.Drawing.Size(99, 45);
             this.btntampil.TabIndex = 24;
             this.btntampil.Text = "Tampil";
             this.btntampil.Click += new System.EventHandler(this.btntampil_Click);
@@ -220,11 +352,12 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnubah.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnubah.ForeColor = System.Drawing.Color.White;
-            this.btnubah.Location = new System.Drawing.Point(1021, 301);
+            this.btnubah.Location = new System.Drawing.Point(1121, 292);
             this.btnubah.Name = "btnubah";
-            this.btnubah.Size = new System.Drawing.Size(155, 33);
+            this.btnubah.Size = new System.Drawing.Size(99, 45);
             this.btnubah.TabIndex = 23;
             this.btnubah.Text = "Ubah";
             this.btnubah.Click += new System.EventHandler(this.btnubah_Click);
@@ -261,9 +394,9 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(720, 301);
+            this.btnsimpan.Location = new System.Drawing.Point(1238, 292);
             this.btnsimpan.Name = "btnsimpan";
-            this.btnsimpan.Size = new System.Drawing.Size(290, 33);
+            this.btnsimpan.Size = new System.Drawing.Size(99, 45);
             this.btnsimpan.TabIndex = 9;
             this.btnsimpan.Text = "Simpan";
             this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
@@ -306,136 +439,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 202;
             // 
-            // tablekereta
-            // 
-            this.tablekereta.AllowUserToAddRows = false;
-            this.tablekereta.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tablekereta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablekereta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablekereta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablekereta.ColumnHeadersHeight = 22;
-            this.tablekereta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.tablekereta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column1,
-            this.Column2,
-            this.Role,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Edit,
-            this.Hapus});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tablekereta.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tablekereta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tablekereta.Location = new System.Drawing.Point(0, 395);
-            this.tablekereta.Name = "tablekereta";
-            this.tablekereta.ReadOnly = true;
-            this.tablekereta.RowHeadersVisible = false;
-            this.tablekereta.RowHeadersWidth = 62;
-            this.tablekereta.RowTemplate.Height = 28;
-            this.tablekereta.Size = new System.Drawing.Size(1415, 319);
-            this.tablekereta.TabIndex = 34;
-            this.tablekereta.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.tablekereta.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablekereta.ThemeStyle.HeaderStyle.Height = 22;
-            this.tablekereta.ThemeStyle.ReadOnly = true;
-            this.tablekereta.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tablekereta.ThemeStyle.RowsStyle.Height = 28;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ID";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "No";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nama Kereta";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Role
-            // 
-            this.Role.HeaderText = "Jenis Kereta";
-            this.Role.MinimumWidth = 8;
-            this.Role.Name = "Role";
-            this.Role.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Jumlah Kursi";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Status";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Harga";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Edit.MinimumWidth = 8;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            // 
-            // Hapus
-            // 
-            this.Hapus.HeaderText = "Hapus";
-            this.Hapus.Image = ((System.Drawing.Image)(resources.GetObject("Hapus.Image")));
-            this.Hapus.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Hapus.MinimumWidth = 8;
-            this.Hapus.Name = "Hapus";
-            this.Hapus.ReadOnly = true;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(507, 71);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(298, 34);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "DAFTAR KERETA";
-            // 
             // FKERETA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -445,7 +448,6 @@ namespace SitiKanisa_Tiket_Kereta
             this.Name = "FKERETA";
             this.Text = "FKERETA";
             this.Load += new System.EventHandler(this.FKERETA_Load);
-            this.tablekereta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablekereta_CellClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablekereta)).EndInit();

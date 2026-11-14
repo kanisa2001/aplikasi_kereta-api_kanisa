@@ -73,6 +73,8 @@ namespace SitiKanisa_Tiket_Kereta
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablejadwal)).BeginInit();
@@ -140,6 +142,7 @@ namespace SitiKanisa_Tiket_Kereta
             // 
             // txttampildata
             // 
+            this.txttampildata.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txttampildata.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.txttampildata.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.txttampildata.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -334,11 +337,12 @@ namespace SitiKanisa_Tiket_Kereta
             this.btncetak.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btncetak.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btncetak.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btncetak.FillColor = System.Drawing.Color.Firebrick;
             this.btncetak.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btncetak.ForeColor = System.Drawing.Color.White;
-            this.btncetak.Location = new System.Drawing.Point(562, 239);
+            this.btncetak.Location = new System.Drawing.Point(891, 239);
             this.btncetak.Name = "btncetak";
-            this.btncetak.Size = new System.Drawing.Size(180, 45);
+            this.btncetak.Size = new System.Drawing.Size(99, 45);
             this.btncetak.TabIndex = 29;
             this.btncetak.Text = "Report";
             this.btncetak.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -364,7 +368,7 @@ namespace SitiKanisa_Tiket_Kereta
             this.cmbrute.ItemHeight = 30;
             this.cmbrute.Location = new System.Drawing.Point(31, 230);
             this.cmbrute.Name = "cmbrute";
-            this.cmbrute.Size = new System.Drawing.Size(244, 36);
+            this.cmbrute.Size = new System.Drawing.Size(565, 36);
             this.cmbrute.TabIndex = 27;
             this.cmbrute.DropDown += new System.EventHandler(this.cmbrute_DropDown);
             this.cmbrute.SelectedIndexChanged += new System.EventHandler(this.cmbrute_SelectedIndexChanged);
@@ -387,9 +391,9 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnsimpan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsimpan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsimpan.ForeColor = System.Drawing.Color.White;
-            this.btnsimpan.Location = new System.Drawing.Point(768, 239);
+            this.btnsimpan.Location = new System.Drawing.Point(1119, 239);
             this.btnsimpan.Name = "btnsimpan";
-            this.btnsimpan.Size = new System.Drawing.Size(212, 45);
+            this.btnsimpan.Size = new System.Drawing.Size(99, 45);
             this.btnsimpan.TabIndex = 16;
             this.btnsimpan.Text = "Simpan";
             this.btnsimpan.Click += new System.EventHandler(this.btnsimpan_Click);
@@ -400,11 +404,12 @@ namespace SitiKanisa_Tiket_Kereta
             this.btnubah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnubah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnubah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnubah.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnubah.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnubah.ForeColor = System.Drawing.Color.White;
             this.btnubah.Location = new System.Drawing.Point(1006, 239);
             this.btnubah.Name = "btnubah";
-            this.btnubah.Size = new System.Drawing.Size(212, 45);
+            this.btnubah.Size = new System.Drawing.Size(99, 45);
             this.btnubah.TabIndex = 17;
             this.btnubah.Text = "Ubah";
             this.btnubah.Click += new System.EventHandler(this.txtubah_Click);
@@ -624,6 +629,24 @@ namespace SitiKanisa_Tiket_Kereta
             this.label5.TabIndex = 19;
             this.label5.Text = "Jam Berangkat";
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Ubah";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 8;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 136;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Hapus";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 8;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 136;
+            // 
             // FJADWAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -685,5 +708,7 @@ namespace SitiKanisa_Tiket_Kereta
         private Guna.UI2.WinForms.Guna2TextBox txtsearch;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2Button btncetak;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }
